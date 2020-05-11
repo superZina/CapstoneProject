@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var ID: UITextField!
+    @IBOutlet weak var Password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
 
