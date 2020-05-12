@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF40EB1A246A6D840096C3C2 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF40EB19246A6D840096C3C2 /* registerViewController.swift */; };
+		FF40EB1C246A6F810096C3C2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */; };
 		FFD3B16A246993A100CC5A90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B169246993A100CC5A90 /* AppDelegate.swift */; };
 		FFD3B16C246993A100CC5A90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B16B246993A100CC5A90 /* SceneDelegate.swift */; };
 		FFD3B16E246993A100CC5A90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B16D246993A100CC5A90 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF40EB19246A6D840096C3C2 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
+		FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FFD3B166246993A100CC5A90 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD3B169246993A100CC5A90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFD3B16B246993A100CC5A90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 				FFD3B169246993A100CC5A90 /* AppDelegate.swift */,
 				FFD3B16B246993A100CC5A90 /* SceneDelegate.swift */,
 				FFD3B16D246993A100CC5A90 /* ViewController.swift */,
+				FF40EB19246A6D840096C3C2 /* registerViewController.swift */,
+				FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */,
 				FFD3B16F246993A100CC5A90 /* Main.storyboard */,
 				FFD3B175246993A300CC5A90 /* Assets.xcassets */,
 				FFD3B177246993A300CC5A90 /* LaunchScreen.storyboard */,
@@ -141,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF40EB1C246A6F810096C3C2 /* CoreDataManager.swift in Sources */,
 				FFD3B174246993A100CC5A90 /* CapstoneProject.xcdatamodeld in Sources */,
 				FFD3B16E246993A100CC5A90 /* ViewController.swift in Sources */,
 				FFD3B16A246993A100CC5A90 /* AppDelegate.swift in Sources */,
+				FF40EB1A246A6D840096C3C2 /* registerViewController.swift in Sources */,
 				FFD3B16C246993A100CC5A90 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
