@@ -25,6 +25,9 @@
                                 <rect key="frame" x="141" y="502" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="로그인"/>
+                                <connections>
+                                    <segue destination="79y-oT-rOc" kind="show" id="lkv-wk-cB1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5l-86-2zw">
                                 <rect key="frame" x="239" y="502" width="52" height="30"/>
@@ -59,6 +62,22 @@
                 </textField>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="137.94642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KU9-gs-5df">
+            <objects>
+                <viewController id="79y-oT-rOc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vsg-dy-OaN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LPs-DB-t7b"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b7p-ex-kgY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W2e-t8-bDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864" y="895"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="cdJ-pi-hLB">
