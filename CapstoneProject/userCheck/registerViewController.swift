@@ -36,7 +36,7 @@ class registerViewController: UIViewController {
             manager.idExist = false
             
         }else{
-            let alert = UIAlertController(title: "available", message: "사용 가능한 아이디 입니다! ", preferredStyle: .alert)
+            let alert = UIAlertController (title: "available", message: "사용 가능한 아이디 입니다! ", preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: "확인", style: .cancel)
             alert.addAction(cancelAction)
             self.present(alert,animated: true)
@@ -46,6 +46,7 @@ class registerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isIDChecked = false
+        manager.idExist = false
     }
     
     var manager:CoreDataManager = CoreDataManager()

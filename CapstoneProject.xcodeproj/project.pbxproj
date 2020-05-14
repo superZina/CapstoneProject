@@ -11,11 +11,13 @@
 		FF40EB1C246A6F810096C3C2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */; };
 		FFD3B16A246993A100CC5A90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B169246993A100CC5A90 /* AppDelegate.swift */; };
 		FFD3B16C246993A100CC5A90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B16B246993A100CC5A90 /* SceneDelegate.swift */; };
-		FFD3B16E246993A100CC5A90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B16D246993A100CC5A90 /* ViewController.swift */; };
+		FFD3B16E246993A100CC5A90 /* logInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B16D246993A100CC5A90 /* logInView.swift */; };
 		FFD3B171246993A100CC5A90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD3B16F246993A100CC5A90 /* Main.storyboard */; };
 		FFD3B174246993A100CC5A90 /* CapstoneProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B172246993A100CC5A90 /* CapstoneProject.xcdatamodeld */; };
 		FFD3B176246993A300CC5A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD3B175246993A300CC5A90 /* Assets.xcassets */; };
 		FFD3B179246993A300CC5A90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD3B177246993A300CC5A90 /* LaunchScreen.storyboard */; };
+		FFF8D92B246D31FA00766074 /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8D92A246D31FA00766074 /* mainView.swift */; };
+		FFF8D92D246D515200766074 /* updateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8D92C246D515200766074 /* updateUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +26,14 @@
 		FFD3B166246993A100CC5A90 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD3B169246993A100CC5A90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFD3B16B246993A100CC5A90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FFD3B16D246993A100CC5A90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFD3B16D246993A100CC5A90 /* logInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInView.swift; sourceTree = "<group>"; };
 		FFD3B170246993A100CC5A90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFD3B173246993A100CC5A90 /* CapstoneProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CapstoneProject.xcdatamodel; sourceTree = "<group>"; };
 		FFD3B175246993A300CC5A90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFD3B178246993A300CC5A90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFD3B17A246993A300CC5A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFF8D92A246D31FA00766074 /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
+		FFF8D92C246D515200766074 /* updateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +66,11 @@
 		FFD3B168246993A100CC5A90 /* CapstoneProject */ = {
 			isa = PBXGroup;
 			children = (
+				FFF8D929246D31E700766074 /* main */,
 				FFD3B169246993A100CC5A90 /* AppDelegate.swift */,
 				FFD3B16B246993A100CC5A90 /* SceneDelegate.swift */,
-				FFD3B16D246993A100CC5A90 /* ViewController.swift */,
-				FF40EB19246A6D840096C3C2 /* registerViewController.swift */,
-				FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */,
+				FFF8D928246D31C900766074 /* userCheck */,
+				FFF8D927246D31B300766074 /* class */,
 				FFD3B16F246993A100CC5A90 /* Main.storyboard */,
 				FFD3B175246993A300CC5A90 /* Assets.xcassets */,
 				FFD3B177246993A300CC5A90 /* LaunchScreen.storyboard */,
@@ -74,6 +78,32 @@
 				FFD3B172246993A100CC5A90 /* CapstoneProject.xcdatamodeld */,
 			);
 			path = CapstoneProject;
+			sourceTree = "<group>";
+		};
+		FFF8D927246D31B300766074 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		FFF8D928246D31C900766074 /* userCheck */ = {
+			isa = PBXGroup;
+			children = (
+				FFD3B16D246993A100CC5A90 /* logInView.swift */,
+				FF40EB19246A6D840096C3C2 /* registerViewController.swift */,
+			);
+			path = userCheck;
+			sourceTree = "<group>";
+		};
+		FFF8D929246D31E700766074 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				FFF8D92A246D31FA00766074 /* mainView.swift */,
+				FFF8D92C246D515200766074 /* updateUserView.swift */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +179,9 @@
 			files = (
 				FF40EB1C246A6F810096C3C2 /* CoreDataManager.swift in Sources */,
 				FFD3B174246993A100CC5A90 /* CapstoneProject.xcdatamodeld in Sources */,
-				FFD3B16E246993A100CC5A90 /* ViewController.swift in Sources */,
+				FFF8D92B246D31FA00766074 /* mainView.swift in Sources */,
+				FFD3B16E246993A100CC5A90 /* logInView.swift in Sources */,
+				FFF8D92D246D515200766074 /* updateUserView.swift in Sources */,
 				FFD3B16A246993A100CC5A90 /* AppDelegate.swift in Sources */,
 				FF40EB1A246A6D840096C3C2 /* registerViewController.swift in Sources */,
 				FFD3B16C246993A100CC5A90 /* SceneDelegate.swift in Sources */,
