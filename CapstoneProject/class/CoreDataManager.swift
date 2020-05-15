@@ -119,9 +119,10 @@ class CoreDataManager {
             let objectUpdate = test?[0] as! NSManagedObject
             
             
-            
+            let password:String = objectUpdate.value(forKey: "password") as! String
             let phone:String = objectUpdate.value(forKey: "phone") as! String
             let email:String = objectUpdate.value(forKey: "email") as! String
+            userData.updateValue(password, forKey: "password")
             userData.updateValue(phone, forKey: "phone")
             userData.updateValue(email, forKey: "email")
             
