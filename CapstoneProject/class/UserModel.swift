@@ -8,25 +8,24 @@
 
 import Foundation
 
-class UserModel:NSObject {
+struct user: Decodable {
     var name:String?
     var ID:String?
     var password:String?
     var phone:String?
     var email:String?
+}
+
+class UserModel {
+    weak var delegate: Downloadable?
+    let networkModel = Network()
     
-    override init() {
+    func downloadUsers(parameters:[String:Any],url:String) {
+        let request = networkModel.request(parameters: parameters, url: url)
+        networkModel.response(request: request) { (data) in
+            let model = try! JSONDecoder().decode([user]?.self, from: data) as [user]?
+            self.delegate?.didReceiveData(data: model! as [user])
+        }
     }
-
-    init(ID:String, name:String,password:String, phone:String,email:String){
-        self.ID  = ID
-        self.name = name
-        self.password = password
-        self.phone = phone
-        self.email = email
-    }
-    override var description: String{
-        return "ID: \(ID) , Name: \(name) , Password: \(password) , Phone: \(phone) , Email: \(email)"
-    }
-
+    
 }
