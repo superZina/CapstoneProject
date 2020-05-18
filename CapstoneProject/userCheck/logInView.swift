@@ -8,15 +8,17 @@
 
 import UIKit
 import Alamofire
+import AlamofireObjectMapper
+import SwiftyJSON
+import ObjectMapper
 
 class logInView: UIViewController {
     
     @IBOutlet weak var ID: UITextField!
     @IBOutlet weak var Password: UITextField!
-    let model = UserModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        model.delegate = self
+//        model.delegate = self
     }
     
     @IBAction func logIn(_ sender: Any) {
@@ -24,11 +26,24 @@ class logInView: UIViewController {
 //        let param = ["id": id , "password" : pw]
 //        model.downloadUsers(parameters: param, url: URLServices.url)
         checkUser()
+       
     }
-    let dataManager:CoreDataManager = CoreDataManager()
+    let dataManager = CoreDataManager()
     func checkUser(){
-        guard let id = ID.text, let pw = Password.text as? String else {return}
-
+        guard let id = ID.text ,let pw = Password.text else {return}
+//        let parameters = ["UserID": id ]
+//        Alamofire.request("http://ec2-54-180-94-102.ap-northeast-2.compute.amazonaws.com/userLogin.php", method: .post,parameters: parameters).responseJSON { (response) in
+//            if let data = response.data {
+//                if let value: AnyObject = response.result.value as AnyObject? {
+//                    let post = JSON(value)
+//                    if let key = post["UserID"].string {
+//                        print("success")
+//                    }else{
+//                        print("error")
+//                    }
+//                }
+//            }
+//        }
         dataManager.checkUser(ID:id , Password:pw)
         //아이디가 존재하지 않을때
         if dataManager.idExist == false {
@@ -51,12 +66,12 @@ class logInView: UIViewController {
     
 }
 
-extension logInView: Downloadable {
-    func didReceiveData(data: Any) {
-        DispatchQueue.main.sync {
-            data as! [user]
-        }
-    }
-    
-    
-}
+//extension logInView: Downloadable {
+//    func didReceiveData(data: Any) {
+//        DispatchQueue.main.sync {
+//            data as! [user]
+//        }
+//    }
+//
+//
+//}
