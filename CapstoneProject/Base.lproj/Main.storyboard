@@ -27,7 +27,6 @@
                                 <state key="normal" title="로그인"/>
                                 <connections>
                                     <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M09-3z-3C5"/>
-                                    <segue destination="79y-oT-rOc" kind="show" id="e1D-LU-BYf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5l-86-2zw">
@@ -96,7 +95,7 @@
         <!--Main View-->
         <scene sceneID="KU9-gs-5df">
             <objects>
-                <viewController id="79y-oT-rOc" customClass="mainView" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="79y-oT-rOc" customClass="mainView" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vsg-dy-OaN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2e-t8-bDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863.7681159420292" y="894.64285714285711"/>
+            <point key="canvasLocation" x="1864" y="649"/>
         </scene>
         <!--Update User View-->
         <scene sceneID="mWB-t8-9SY">

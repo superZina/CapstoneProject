@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		E04C154FA73ACFC0DD8AFA48 /* Pods_CapstoneProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB8B5854D6E049C7836E039 /* Pods_CapstoneProject.framework */; };
 		FF40EB1A246A6D840096C3C2 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF40EB19246A6D840096C3C2 /* registerViewController.swift */; };
 		FF40EB1C246A6F810096C3C2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */; };
-		FF85310924701B82005C5833 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85310824701B82005C5833 /* UserModel.swift */; };
 		FF9323612471580F00344E88 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9323602471580F00344E88 /* Network.swift */; };
 		FFD3B16A246993A100CC5A90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B169246993A100CC5A90 /* AppDelegate.swift */; };
 		FFD3B16C246993A100CC5A90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B16B246993A100CC5A90 /* SceneDelegate.swift */; };
@@ -29,7 +28,6 @@
 		90EB8E4FF5EBE87A5CE27936 /* Pods-CapstoneProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneProject.debug.xcconfig"; path = "Target Support Files/Pods-CapstoneProject/Pods-CapstoneProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FF40EB19246A6D840096C3C2 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		FF85310824701B82005C5833 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		FF9323602471580F00344E88 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FFD3B166246993A100CC5A90 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD3B169246993A100CC5A90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 				90EB8E4FF5EBE87A5CE27936 /* Pods-CapstoneProject.debug.xcconfig */,
 				75DDF14A61F84312D338BF46 /* Pods-CapstoneProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -113,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */,
-				FF85310824701B82005C5833 /* UserModel.swift */,
 				FF9323602471580F00344E88 /* Network.swift */,
 			);
 			path = class;
@@ -260,7 +256,6 @@
 				FFF8D92D246D515200766074 /* updateUserView.swift in Sources */,
 				FFD3B16A246993A100CC5A90 /* AppDelegate.swift in Sources */,
 				FF40EB1A246A6D840096C3C2 /* registerViewController.swift in Sources */,
-				FF85310924701B82005C5833 /* UserModel.swift in Sources */,
 				FFD3B16C246993A100CC5A90 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

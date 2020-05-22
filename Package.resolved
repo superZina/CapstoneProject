@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MongoSwift",
+        "repositoryURL": "https://github.com/mongodb/mongo-swift-driver.git",
+        "state": {
+          "branch": null,
+          "revision": "51288fbefdb4ca232cc014ca443c0d82b634189c",
+          "version": "0.3.0"
+        }
+      },
+      {
+        "package": "Nimble",
+        "repositoryURL": "https://github.com/Quick/Nimble.git",
+        "state": {
+          "branch": null,
+          "revision": "f8657642dfdec9973efc79cc68bcef43a653a2bc",
+          "version": "8.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

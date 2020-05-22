@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 protocol  Downloadable: class {
     func didReceiveData(data:Any)
 }

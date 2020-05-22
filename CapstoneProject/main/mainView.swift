@@ -9,7 +9,7 @@
 import UIKit
 
 class mainView: UIViewController {
-    var userId:String = UserDefaults.standard.value(forKey: "id") as! String
+    var userId:String = (UserDefaults.standard.value(forKey: "id") as? String)!
     @IBAction func editUserInfo(_ sender: Any) {
         performSegue(withIdentifier: "edit", sender: nil)
     }
