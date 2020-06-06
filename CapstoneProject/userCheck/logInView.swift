@@ -32,14 +32,19 @@ class logInView: UIViewController {
     
     @IBOutlet weak var ID: UITextField!
     @IBOutlet weak var Password: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.ID.delegate = self
+        self.Password.delegate = self
     }
     
     @IBAction func logIn(_ sender: Any) {
         checkUser()
     }
     let dataManager = CoreDataManager()
+    
     func checkUser(){
         guard let id = ID.text ,let pw = Password.text else {return}
         let call = Alamofire.request(url, method: .get , parameters: nil)
@@ -70,7 +75,7 @@ class logInView: UIViewController {
                         UserDefaults.standard.set(id, forKey: "id")
                         UserDefaults.standard.set(pw, forKey: "password")
                         let mv = self.storyboard?.instantiateViewController(withIdentifier: "mainView") as! mainView
-                        self.present(mv,animated: true, completion: nil)
+                        self.navigationController?.pushViewController(mv, animated: true)
                         break
                     }
                 }
@@ -100,3 +105,11 @@ class logInView: UIViewController {
     
 }
 
+extension logInView: UITextFieldDelegate {
+   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if(string == "\n"){
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+}

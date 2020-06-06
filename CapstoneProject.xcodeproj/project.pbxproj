@@ -10,6 +10,7 @@
 		E04C154FA73ACFC0DD8AFA48 /* Pods_CapstoneProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB8B5854D6E049C7836E039 /* Pods_CapstoneProject.framework */; };
 		FF40EB1A246A6D840096C3C2 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF40EB19246A6D840096C3C2 /* registerViewController.swift */; };
 		FF40EB1C246A6F810096C3C2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */; };
+		FF8B7DB72483D51900DE1B5B /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8B7DB62483D51900DE1B5B /* UserResponse.swift */; };
 		FF9323612471580F00344E88 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9323602471580F00344E88 /* Network.swift */; };
 		FFD3B16A246993A100CC5A90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B169246993A100CC5A90 /* AppDelegate.swift */; };
 		FFD3B16C246993A100CC5A90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B16B246993A100CC5A90 /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 		90EB8E4FF5EBE87A5CE27936 /* Pods-CapstoneProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapstoneProject.debug.xcconfig"; path = "Target Support Files/Pods-CapstoneProject/Pods-CapstoneProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FF40EB19246A6D840096C3C2 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		FF40EB1B246A6F810096C3C2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FF8B7DB62483D51900DE1B5B /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		FF9323602471580F00344E88 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FFD3B166246993A100CC5A90 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD3B169246993A100CC5A90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				FFD3B16D246993A100CC5A90 /* logInView.swift */,
 				FF40EB19246A6D840096C3C2 /* registerViewController.swift */,
+				FF8B7DB62483D51900DE1B5B /* UserResponse.swift */,
 			);
 			path = userCheck;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				FFD3B174246993A100CC5A90 /* CapstoneProject.xcdatamodeld in Sources */,
 				FFF8D92B246D31FA00766074 /* mainView.swift in Sources */,
 				FFD3B16E246993A100CC5A90 /* logInView.swift in Sources */,
+				FF8B7DB72483D51900DE1B5B /* UserResponse.swift in Sources */,
 				FFF8D92D246D515200766074 /* updateUserView.swift in Sources */,
 				FFD3B16A246993A100CC5A90 /* AppDelegate.swift in Sources */,
 				FF40EB1A246A6D840096C3C2 /* registerViewController.swift in Sources */,

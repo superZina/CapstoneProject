@@ -13,10 +13,17 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var window:UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+         self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let mainVC = logInView()
+                self.window?.rootViewController = UINavigationController(rootViewController: mainVC)
+                self.window?.makeKeyAndVisible()
+                
+                return true
     }
 
     // MARK: UISceneSession Lifecycle

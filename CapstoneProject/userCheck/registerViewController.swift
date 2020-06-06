@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
 
 class registerViewController: UIViewController {
+    let url = "http://127.0.0.1:3000/api/User"
     
     @IBOutlet weak var ID: UITextField!
     @IBOutlet weak var Password: UITextField!
@@ -51,24 +53,28 @@ class registerViewController: UIViewController {
     
     var manager:CoreDataManager = CoreDataManager()
     func addUser(){
-        guard let id = ID.text , let password = Password.text,let passwordCF = PasswordCF.text ,let phone = PhoneNum.text, let email = Email.text else {return}
+        guard let id = ID.text ,let pw = Password.text ,let phone = PhoneNum.text, let email = Email.text else {return}
         
-        if password != passwordCF {
-            let alert = UIAlertController(title: "error", message: "비밀번호를 확인해주세요!", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "확인", style: .cancel)
-            alert.addAction(cancelAction)
-            self.present(alert,animated: true)
-            self.Password.becomeFirstResponder()
-        }else{
-            
-            if isIDChecked == false{
-                let alert = UIAlertController(title: "error", message: "아이디 중복체크를 해주세요!", preferredStyle: .alert)
-                let cancelAction = UIAlertAction(title: "확인", style: .cancel)
-                alert.addAction(cancelAction)
-                self.present(alert,animated: true)
-            }else{
-                manager.registUser(ID: id, Password: password, Phone: phone, Email: email)
+        var parameters:[String:String?] = [
+            "id" : id ,
+            "password" : pw,
+            "phone" : phone,
+            "email" : email,
+            "name" : "adsfasdfsd"
+        ]
+        let call = Alamofire.request(url, method: .post , parameters: parameters, encoding: JSONEncoding.default)
+        
+        call.responseJSON { (response) in
+            guard let jsonObject = response.result.value as? [String:AnyObject] else {
+                NSLog("서버 호출 과정에서 에러 발생")
+                print(response)
+                return
             }
+            
+            let alert = UIAlertController(title: "환영합니다!", message: "회원가입에 성공하였습니다!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .default)
+            alert.addAction(okAction)
+            self.present(alert,animated: true,completion: nil)
         }
     }
     
