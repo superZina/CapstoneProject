@@ -338,21 +338,29 @@
         <!--Item-->
         <scene sceneID="Beo-ha-WBl">
             <objects>
-                <viewController id="1ho-sR-mhv" sceneMemberID="viewController">
+                <viewController id="1ho-sR-mhv" customClass="busStopListViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uaA-jf-jai">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qCA-YW-sBW">
-                                <rect key="frame" x="67" y="359" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qCA-YW-sBW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lb5-dJ-8ce" firstAttribute="bottom" secondItem="qCA-YW-sBW" secondAttribute="bottom" id="Xi7-ML-2Dn"/>
+                            <constraint firstItem="qCA-YW-sBW" firstAttribute="top" secondItem="lb5-dJ-8ce" secondAttribute="top" id="gAg-nX-pJu"/>
+                            <constraint firstItem="lb5-dJ-8ce" firstAttribute="trailing" secondItem="qCA-YW-sBW" secondAttribute="trailing" id="m0A-iu-FJ4"/>
+                            <constraint firstItem="qCA-YW-sBW" firstAttribute="leading" secondItem="lb5-dJ-8ce" secondAttribute="leading" id="wam-gU-BeO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lb5-dJ-8ce"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="emf-Mj-nym"/>
+                    <connections>
+                        <outlet property="busStopTable" destination="qCA-YW-sBW" id="FKQ-1x-65O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OX6-cX-Q5c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
