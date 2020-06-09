@@ -31,12 +31,29 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
     }
     
     
+    @IBAction func updateLocation(_ sender: Any) {
+        lat = lat + 0.0005
+        lon = lon + 0.0005
+        let destinationPosition = CLLocationCoordinate2D(latitude: lat, longitude: lon )
+        UIView.animate(withDuration: 4, animations: {
+            self.myAnnotation.coordinate = destinationPosition
+        })
+    }
     
     
     @IBOutlet weak var mainMap: MKMapView!
     @IBOutlet weak var location: UILabel!
     var manager = CLLocationManager()
     var myLocations: [CLLocation] = []
+    let myAnnotation = MKPointAnnotation()
+    var lat = 37.450114
+    var lon = 127.140036
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isTranslucent = false
+    }
+    var annotaions:[BusStop] = []
+    
     override func viewDidLoad() {
         var message = self.userId + "님 환영합니다!"
         super.viewDidLoad()
@@ -45,6 +62,7 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         alert.addAction(cancelAction)
         self.present(alert,animated: true)
         
+        mainMap.delegate = self
         //locationManagerDelegate
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -57,17 +75,30 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         mainMap.showsUserLocation = true
         
         //메인뷰에 특정 위치 표시하기(정류소 위치 표시하기)
-        setAnnotaion(lat: 37.450874, lon: 127.128890, delta: 1, title: "가천대학교", subtitle: "글로벌 캠퍼스")
-        setAnnotaion(lat: 37.450963, lon: 127.127133, delta: 1, title: "IT대학교", subtitle: "IT대 정류장")
-        setAnnotaion(lat: 37.451819, lon: 127.131554, delta: 1, title: "교육대학원", subtitle: "교육대학원앞 정류장")
-        setAnnotaion(lat: 37.452466, lon: 127.132906, delta: 1, title: "중앙도서관", subtitle: "중앙도서관 정류장")
-        setAnnotaion(lat: 37.453352, lon: 127.134065, delta: 1, title: "학생회관", subtitle: "학생회관 정류장")
-        setAnnotaion(lat: 37.456154, lon:  127.135095, delta: 1, title: "기숙사", subtitle: "기숙사 앞 정류장")
-    
+//        setAnnotaion(lat: lat, lon: lon, delta: 1, title: "가천대학교", subtitle: "글로벌 캠퍼스")
+        
+        let IT = BusStop(title: "IT대학교", coordinate: CLLocationCoordinate2D(latitude: 37.450963, longitude: 127.127133), subtitle: "IT대 정류장")
+        let edu = BusStop(title: "교육대학원", coordinate: CLLocationCoordinate2D(latitude: 37.451819, longitude: 127.131554), subtitle: "교육대학원 정류장")
+        let library = BusStop(title: "중앙도서관", coordinate: CLLocationCoordinate2D(latitude: 37.452466, longitude: 127.132906), subtitle: "중앙도서관 정류장")
+        let student = BusStop(title: "학생회관", coordinate: CLLocationCoordinate2D(latitude:  37.450963, longitude: 127.134065), subtitle: "학생회관 정류장")
+        let domitory = BusStop(title: "기숙사", coordinate: CLLocationCoordinate2D(latitude: 37.456154, longitude: 127.135095), subtitle: "기숙사 앞 정류장")
+
+        let startPostion = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        annotaions = [IT,edu,library,student,domitory]
+        mainMap.addAnnotation(IT)
+        mainMap.addAnnotation(domitory)
+        mainMap.addAnnotation(student)
+        mainMap.addAnnotation(library)
+        mainMap.addAnnotation(edu)
     }
     @IBAction func myLocation(_ sender: Any) {
-        
-        manager.startUpdatingLocation()
+        let title = "IT대학교"
+//        manager.startUpdatingLocation()
+        for annotation in self.mainMap.annotations {
+            if annotation.title == title{
+                self.mainMap.selectAnnotation(annotation, animated: true)
+            }
+        }
     }
     func goLocation(latitudeValue: CLLocationDegrees, longitudeValue:CLLocationDegrees , delta span: Double) -> CLLocationCoordinate2D {
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longitudeValue)
@@ -109,5 +140,45 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         manager.stopUpdatingLocation()
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
+        print("selected")
+        print((view.annotation?.title)!!)
+        let selectPopUpStoryboard = UIStoryboard(name: "popUpView", bundle: Bundle.main)
+        guard let PopUp = selectPopUpStoryboard
+            .instantiateViewController(withIdentifier: "popUpView") as? popUpView else {
+                return
+        }
+        PopUp.modalPresentationStyle = .custom
+        guard let busStopName = view.annotation?.title else {return}
+        PopUp.name = busStopName!
+        let preLat = (view.annotation?.coordinate.latitude)!
+        let preLon = view.annotation?.coordinate.longitude
+        let preLoc = CLLocation(latitude: preLat, longitude: preLon!)
+        let userLoc = CLLocation(latitude: (self.manager.location?.coordinate.latitude)!, longitude: (self.manager.location?.coordinate.longitude)!)
+        PopUp.dis = preLoc.distance(from: userLoc)
+        self.present(PopUp, animated: true, completion: nil)
+    }
   
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        guard annotation is BusStop else {return nil}
+//        let identifier = "BusStop"
+//
+//        // 3
+//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+//
+//        if annotationView == nil {
+//            //4
+//            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+//            annotationView?.canShowCallout = true
+//
+//            // 5
+//            let btn = UIButton(type: .detailDisclosure)
+//            annotationView?.rightCalloutAccessoryView = btn
+//        } else {
+//            // 6
+//            annotationView?.annotation = annotation
+//        }
+//
+//        return annotationView
+//    }
 }

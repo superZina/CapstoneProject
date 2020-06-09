@@ -43,7 +43,6 @@ class logInView: UIViewController {
     @IBAction func logIn(_ sender: Any) {
         checkUser()
     }
-    let dataManager = CoreDataManager()
     
     func checkUser(){
         guard let id = ID.text ,let pw = Password.text else {return}
@@ -74,32 +73,16 @@ class logInView: UIViewController {
                         // 아이디 존재, 비밀번호 일치
                         UserDefaults.standard.set(id, forKey: "id")
                         UserDefaults.standard.set(pw, forKey: "password")
-                        let mv = self.storyboard?.instantiateViewController(withIdentifier: "mainView") as! mainView
-                        self.navigationController?.pushViewController(mv, animated: true)
+                       
+                        let tab = self.storyboard?.instantiateViewController(withIdentifier: "tabView") as! UITabBarController
+                        self.navigationController?.pushViewController(tab, animated: true)
                         break
                     }
                 }
                 
             }
         }
-        
-        //        dataManager.checkUser(ID:id , Password:pw)
-        //        //아이디가 존재하지 않을때
-        //        if dataManager.idExist == false {
-        //            let alert = UIAlertController (title: "no Id", message: "아이디가 존재하지 않습니다!", preferredStyle: .alert)
-        //            let cancelAction = UIAlertAction(title: "확인", style: .cancel)
-        //            alert.addAction(cancelAction)
-        //            self.present(alert,animated: true)
-        //        }else if dataManager.pwCorrect == false {
-        //            let alert = UIAlertController (title: "Password error", message: "비밀번호가 맞지 않습니다!", preferredStyle: .alert)
-        //            let cancelAction = UIAlertAction(title: "확인", style: .cancel)
-        //            alert.addAction(cancelAction)
-        //            self.present(alert,animated: true)
-        //        }else{
-        //            UserDefaults.standard.set(id, forKey: "id")
-        //            UserDefaults.standard.set(pw, forKey: "password")
-        //            // TODO: 회원 이름 저장
-        //        }
+
     }
     
     

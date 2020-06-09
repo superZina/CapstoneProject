@@ -109,32 +109,32 @@ class CoreDataManager {
         
     }
     
-    func getUser(ID:String)->Dictionary<String, Any>{
-        var userData:Dictionary<String,String> = Dictionary<String,String>()
-        let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "User")
-        fetchRequest1.predicate = NSPredicate(format: "id = %@", ID)
-        
-        do{
-            let test = try managedContext?.fetch(fetchRequest)
-            let objectUpdate = test?[0] as! NSManagedObject
-            
-            
-            let password:String = objectUpdate.value(forKey: "password") as! String
-            let phone:String = objectUpdate.value(forKey: "phone") as! String
-            let email:String = objectUpdate.value(forKey: "email") as! String
-            userData.updateValue(password, forKey: "password")
-            userData.updateValue(phone, forKey: "phone")
-            userData.updateValue(email, forKey: "email")
-            
-            do{
-                try managedContext?.save()
-            }catch {
-                print("update error")
-            }
-        }catch {
-            print("update error")
-        }
-        
-        return userData
-    }
+//    func getUser(ID:String)->Dictionary<String, Any>{
+//        var userData:Dictionary<String,String> = Dictionary<String,String>()
+//        let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "User")
+//        fetchRequest1.predicate = NSPredicate(format: "id = %@", ID)
+//        
+//        do{
+//            let test = try managedContext?.fetch(fetchRequest)
+//            let objectUpdate = test?[0] as! NSManagedObject
+//            
+//            
+//            let password:String = objectUpdate.value(forKey: "password") as! String
+//            let phone:String = objectUpdate.value(forKey: "phone") as! String
+//            let email:String = objectUpdate.value(forKey: "email") as! String
+//            userData.updateValue(password, forKey: "password")
+//            userData.updateValue(phone, forKey: "phone")
+//            userData.updateValue(email, forKey: "email")
+//            
+//            do{
+//                try managedContext?.save()
+//            }catch {
+//                print("update error")
+//            }
+//        }catch {
+//            print("update error")
+//        }
+//        
+//        return userData
+//    }
 }

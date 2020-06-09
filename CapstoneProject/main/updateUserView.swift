@@ -17,14 +17,14 @@ class updateUserView: UIViewController {
     @IBOutlet weak var email: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let pw:String = dataManager.getUser(ID: id)["password"] as! String
-        let phone:String = dataManager.getUser(ID: id)["phone"] as! String
-        let email:String = dataManager.getUser(ID: id)["email"] as! String
-        self.uesrID.text = id
-        self.password.text = UserDefaults.standard.value(forKey: "password") as! String
-        self.password.text = pw
-        self.phone.text = phone
-        self.email.text = email
+//        let pw:String = dataManager.getUser(ID: id)["password"] as! String
+//        let phone:String = dataManager.getUser(ID: id)["phone"] as! String
+//        let email:String = dataManager.getUser(ID: id)["email"] as! String
+//        self.uesrID.text = id
+//        self.password.text = UserDefaults.standard.value(forKey: "password") as! String
+//        self.password.text = pw
+//        self.phone.text = phone
+//        self.email.text = email
     }
     
     @IBAction func updateUserInfo(_ sender: Any) {

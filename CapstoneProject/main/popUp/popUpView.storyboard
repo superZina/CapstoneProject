@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pop Up View-->
+        <scene sceneID="Nv9-Ke-O68">
+            <objects>
+                <viewController restorationIdentifier="popUpView" storyboardIdentifier="popUpView" id="SCG-hA-sDb" customClass="popUpView" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ucx-Id-OLq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHw-oC-wsk">
+                                <rect key="frame" x="0.0" y="489" width="414" height="407"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정류장 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVv-jL-Tyh">
+                                        <rect key="frame" x="50" y="50" width="104.5" height="28"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제 2 기숙사 행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sET-rd-j03">
+                                        <rect key="frame" x="50" y="97" width="97" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user와 정류장 거리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MD-Uz-Gif">
+                                        <rect key="frame" x="50" y="138" width="131" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="셔틀버스 도착 에상시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpM-qj-RTy">
+                                        <rect key="frame" x="50" y="193" width="156" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIS-qh-GRr">
+                                        <rect key="frame" x="192" y="337" width="30" height="30"/>
+                                        <state key="normal" title="닫기"/>
+                                        <connections>
+                                            <action selector="exit:" destination="SCG-hA-sDb" eventType="touchUpInside" id="MVb-gd-72J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cIS-qh-GRr" secondAttribute="trailing" constant="192" id="0gq-A5-hEV"/>
+                                    <constraint firstItem="cIS-qh-GRr" firstAttribute="leading" secondItem="dHw-oC-wsk" secondAttribute="leading" constant="192" id="B73-6N-EbK"/>
+                                    <constraint firstItem="GpM-qj-RTy" firstAttribute="top" secondItem="7MD-Uz-Gif" secondAttribute="bottom" constant="34" id="EM6-cW-wPV"/>
+                                    <constraint firstItem="sET-rd-j03" firstAttribute="top" secondItem="RVv-jL-Tyh" secondAttribute="bottom" constant="19" id="ReR-N6-UEL"/>
+                                    <constraint firstItem="GpM-qj-RTy" firstAttribute="leading" secondItem="dHw-oC-wsk" secondAttribute="leading" constant="50" id="VKt-IS-bvm"/>
+                                    <constraint firstItem="7MD-Uz-Gif" firstAttribute="top" secondItem="sET-rd-j03" secondAttribute="bottom" constant="20" id="Xuo-u6-Rac"/>
+                                    <constraint firstAttribute="trailing" secondItem="sET-rd-j03" secondAttribute="trailing" constant="267" id="YaS-xV-fUQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="GpM-qj-RTy" secondAttribute="trailing" constant="208" id="cAW-62-Seb"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="RVv-jL-Tyh" secondAttribute="trailing" constant="304" id="dRC-Dr-KU9"/>
+                                    <constraint firstItem="sET-rd-j03" firstAttribute="leading" secondItem="dHw-oC-wsk" secondAttribute="leading" constant="50" id="hkh-XM-KLB"/>
+                                    <constraint firstAttribute="bottom" secondItem="cIS-qh-GRr" secondAttribute="bottom" constant="40" id="jJj-zl-LNZ"/>
+                                    <constraint firstItem="7MD-Uz-Gif" firstAttribute="leading" secondItem="dHw-oC-wsk" secondAttribute="leading" constant="50" id="rzr-oV-irD"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="7MD-Uz-Gif" secondAttribute="trailing" constant="233" id="sV1-KZ-UU1"/>
+                                    <constraint firstItem="RVv-jL-Tyh" firstAttribute="top" secondItem="dHw-oC-wsk" secondAttribute="top" constant="50" id="st3-Rw-vJ9"/>
+                                    <constraint firstItem="cIS-qh-GRr" firstAttribute="top" secondItem="GpM-qj-RTy" secondAttribute="bottom" constant="123" id="t0p-2m-4Nh"/>
+                                    <constraint firstItem="RVv-jL-Tyh" firstAttribute="leading" secondItem="dHw-oC-wsk" secondAttribute="leading" constant="50" id="ynB-bz-D9w"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dHw-oC-wsk" firstAttribute="top" secondItem="DbM-Sn-g2D" secondAttribute="top" constant="445" id="aMC-Gw-8oe"/>
+                            <constraint firstItem="dHw-oC-wsk" firstAttribute="trailing" secondItem="DbM-Sn-g2D" secondAttribute="trailing" id="bCD-WP-Dhd"/>
+                            <constraint firstItem="dHw-oC-wsk" firstAttribute="leading" secondItem="DbM-Sn-g2D" secondAttribute="leading" id="jP1-Xm-W23"/>
+                            <constraint firstAttribute="bottom" secondItem="dHw-oC-wsk" secondAttribute="bottom" id="ySL-HN-wUq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DbM-Sn-g2D"/>
+                    </view>
+                    <connections>
+                        <outlet property="busStopName" destination="RVv-jL-Tyh" id="Nbk-5n-eOz"/>
+                        <outlet property="distance" destination="7MD-Uz-Gif" id="rPZ-3C-l3p"/>
+                        <outlet property="time" destination="GpM-qj-RTy" id="98c-rg-o6J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="soc-m4-Qsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42.028985507246382" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+</document>
