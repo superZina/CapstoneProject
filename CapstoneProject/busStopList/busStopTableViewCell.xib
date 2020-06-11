@@ -25,6 +25,9 @@
                         </constraints>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="seeLocation:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="msX-eo-MHS"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-MI-DzG">
                         <rect key="frame" x="196" y="39" width="108" height="30"/>

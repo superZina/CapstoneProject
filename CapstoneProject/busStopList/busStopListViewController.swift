@@ -16,7 +16,8 @@ class busStopListViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = busStopTable.dequeueReusableCell(withIdentifier: "busStopCell") as? busStopTableViewCell else {return UITableViewCell()}
-        cell.busStopName.setTitle(busStop[indexPath.row], for: .normal) 
+        cell.busStopName.setTitle(busStop[indexPath.row], for: .normal)
+        cell.busStopName.addTarget(self, action: #selector(seeLocation(_:)), for: .allTouchEvents)
         return cell
     }
     
@@ -31,5 +32,14 @@ class busStopListViewController: UIViewController,UITableViewDelegate,UITableVie
         self.busStopTable.estimatedRowHeight = 550.0
         // Do any additional setup after loading the view.
     }
-   
+    @objc func seeLocation(_ sender: UIButton){
+        self.tabBarController?.selectedIndex = 0
+        let mainVC = self.tabBarController?.viewControllers![0] as? mainView
+        for annotation in mainVC!.mainMap.annotations {
+            if annotation.title == sender.titleLabel?.text {
+                mainVC!.mainMap.selectAnnotation(annotation, animated: true)
+            }
+        }
+        
+    }
 }

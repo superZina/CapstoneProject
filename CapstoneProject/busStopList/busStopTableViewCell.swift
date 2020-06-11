@@ -10,6 +10,8 @@ import UIKit
 
 class busStopTableViewCell: UITableViewCell {
 
+    @IBAction func seeLocation(_ sender: Any) {
+    }
     @IBOutlet weak var seePeople: UIButton!
     @IBOutlet weak var busStopName: UIButton!
     override func awakeFromNib() {
