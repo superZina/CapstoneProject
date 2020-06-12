@@ -32,12 +32,13 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
     
     
     @IBAction func updateLocation(_ sender: Any) {
-        lat = lat + 0.0005
-        lon = lon + 0.0005
-        let destinationPosition = CLLocationCoordinate2D(latitude: lat, longitude: lon )
-        UIView.animate(withDuration: 4, animations: {
-            self.myAnnotation.coordinate = destinationPosition
-        })
+        gpsDataManager().getUser(self)
+//        lat = lat + 0.0005
+//        lon = lon + 0.0005
+//        let destinationPosition = CLLocationCoordinate2D(latitude: lat, longitude: lon )
+//        UIView.animate(withDuration: 4, animations: {
+//            self.myAnnotation.coordinate = destinationPosition
+//        })
     }
     
     
@@ -51,6 +52,7 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isTranslucent = false
+//        gpsDataManager().getUser(self)
     }
     var annotaions:[BusStop] = []
     
@@ -90,7 +92,12 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         mainMap.addAnnotation(student)
         mainMap.addAnnotation(library)
         mainMap.addAnnotation(edu)
+        mainMap.addAnnotation(myAnnotation)
     }
+    
+    
+    
+    
     @IBAction func myLocation(_ sender: Any) {
         let title = "IT대학교"
 //        manager.startUpdatingLocation()
