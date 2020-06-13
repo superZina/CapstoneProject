@@ -10,7 +10,7 @@ import UIKit
 
 class updateUserView: UIViewController {
     let id:String = UserDefaults.standard.value(forKey: "id") as! String
-    let dataManager:CoreDataManager = CoreDataManager()
+//    let dataManager:CoreDataManager = CoreDataManager()
     @IBOutlet weak var uesrID: UILabel!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var phone: UITextField!
@@ -29,7 +29,7 @@ class updateUserView: UIViewController {
     
     @IBAction func updateUserInfo(_ sender: Any) {
         guard let phone:String = phone.text , let email:String = email.text, let pw:String = password.text else {return}
-        dataManager.updateUser(ID: id, Password: pw, phoneNum: phone, email: email)
+//        dataManager.updateUser(ID: id, Password: pw, phoneNum: phone, email: email)
         print("update success")
     }
 }

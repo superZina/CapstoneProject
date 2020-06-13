@@ -5,6 +5,7 @@ PODS:
   - AlamofireObjectMapper (5.2.1):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - BEMCheckBox (1.4.1)
   - ObjectMapper (3.5.2)
   - SwiftyJSON (5.0.0)
 
@@ -12,6 +13,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireNetworkActivityIndicator (~> 2.3)
   - AlamofireObjectMapper (~> 5.2)
+  - BEMCheckBox
   - SwiftyJSON
 
 SPEC REPOS:
@@ -19,6 +21,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireNetworkActivityIndicator
     - AlamofireObjectMapper
+    - BEMCheckBox
     - ObjectMapper
     - SwiftyJSON
 
@@ -26,9 +29,10 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 865f656cdedb94b7be55a3f7f5fd2ce275a02779
+PODFILE CHECKSUM: 343f222885da55cbd6a34808e7649a402679eeaf
 
 COCOAPODS: 1.9.1

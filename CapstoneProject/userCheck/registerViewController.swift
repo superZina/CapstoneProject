@@ -28,30 +28,30 @@ class registerViewController: UIViewController {
     var isIDChecked:Bool = false
     
     @IBAction func checkID(_ sender: Any) {
-        let id = ID.text as! String
-        manager.checkID(ID: id)
-        if(manager.idExist == true){
-            let alert = UIAlertController(title: "error", message: "이미 아이디가 존재 합니다! ", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "확인", style: .cancel)
-            alert.addAction(cancelAction)
-            self.present(alert,animated: true)
-            manager.idExist = false
-            
-        }else{
-            let alert = UIAlertController (title: "available", message: "사용 가능한 아이디 입니다! ", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "확인", style: .cancel)
-            alert.addAction(cancelAction)
-            self.present(alert,animated: true)
-        }
-        isIDChecked = true
+//        let id = ID.text as! String
+//        manager.checkID(ID: id)
+//        if(manager.idExist == true){
+//            let alert = UIAlertController(title: "error", message: "이미 아이디가 존재 합니다! ", preferredStyle: .alert)
+//            let cancelAction = UIAlertAction(title: "확인", style: .cancel)
+//            alert.addAction(cancelAction)
+//            self.present(alert,animated: true)
+//            manager.idExist = false
+//
+//        }else{
+//            let alert = UIAlertController (title: "available", message: "사용 가능한 아이디 입니다! ", preferredStyle: .alert)
+//            let cancelAction = UIAlertAction(title: "확인", style: .cancel)
+//            alert.addAction(cancelAction)
+//            self.present(alert,animated: true)
+//        }
+//        isIDChecked = true
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         isIDChecked = false
-        manager.idExist = false
+//        manager.idExist = false
     }
     
-    var manager:CoreDataManager = CoreDataManager()
+//    var manager:CoreDataManager = CoreDataManager()
     func addUser(){
         guard let id = ID.text ,let pw = Password.text ,let phone = PhoneNum.text, let email = Email.text else {return}
         

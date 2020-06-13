@@ -33,11 +33,6 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
     
     @IBAction func updateLocation(_ sender: Any) {
         gpsDataManager().getUser(self)
-//        lat = lat + 0.0005
-//        lon = lon + 0.0005
-//        let destinationPosition = CLLocationCoordinate2D(latitude: lat, longitude: lon )
-//        UIView.animate(withDuration: 4, animations: {
-//            self.myAnnotation.coordinate = destinationPosition
 //        })
     }
     
@@ -148,8 +143,7 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
-        print("selected")
-        print((view.annotation?.title)!!)
+        
         let selectPopUpStoryboard = UIStoryboard(name: "popUpView", bundle: Bundle.main)
         guard let PopUp = selectPopUpStoryboard
             .instantiateViewController(withIdentifier: "popUpView") as? popUpView else {
@@ -166,26 +160,4 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         self.present(PopUp, animated: true, completion: nil)
     }
   
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        guard annotation is BusStop else {return nil}
-//        let identifier = "BusStop"
-//
-//        // 3
-//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-//
-//        if annotationView == nil {
-//            //4
-//            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//            annotationView?.canShowCallout = true
-//
-//            // 5
-//            let btn = UIButton(type: .detailDisclosure)
-//            annotationView?.rightCalloutAccessoryView = btn
-//        } else {
-//            // 6
-//            annotationView?.annotation = annotation
-//        }
-//
-//        return annotationView
-//    }
 }

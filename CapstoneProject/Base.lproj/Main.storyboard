@@ -335,6 +335,217 @@
             </objects>
             <point key="canvasLocation" x="2948" y="1430"/>
         </scene>
+        <!--List Pop Up View-->
+        <scene sceneID="Jcm-1t-grn">
+            <objects>
+                <viewController id="mn4-2S-TZX" customClass="listPopUpView" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hdi-qh-yA4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKL-PU-g1H" customClass="BEMCheckBox">
+                                <rect key="frame" x="61" y="138" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="413-Qb-ksS"/>
+                                    <constraint firstAttribute="width" constant="30" id="Fkp-2Z-Btf"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT대학교" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9s-Wb-dsS">
+                                <rect key="frame" x="171" y="124" width="150" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="csG-y8-zV9"/>
+                                    <constraint firstAttribute="width" constant="150" id="kVc-hs-MMk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofZ-Kz-QRl" customClass="BEMCheckBox">
+                                <rect key="frame" x="61" y="241" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="G19-t6-lcY"/>
+                                    <constraint firstAttribute="width" constant="30" id="Y6j-hg-Sha"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="교육대학원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1r-cY-gY7">
+                                <rect key="frame" x="171" y="227" width="150" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="4Wc-ID-ieN"/>
+                                    <constraint firstAttribute="height" constant="60" id="ldi-IB-ksd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0U-ZA-JhJ" customClass="BEMCheckBox">
+                                <rect key="frame" x="61" y="341" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Hur-wf-6lo"/>
+                                    <constraint firstAttribute="height" constant="30" id="VyO-Ax-Mcm"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중앙도서관" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7T-6Q-iQI">
+                                <rect key="frame" x="171" y="327" width="150" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="48n-pI-HQy"/>
+                                    <constraint firstAttribute="height" constant="60" id="bun-VP-L60"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMP-pp-Th3" customClass="BEMCheckBox">
+                                <rect key="frame" x="61" y="440" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0gu-UC-Kq4"/>
+                                    <constraint firstAttribute="width" constant="30" id="BA3-CK-bmF"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학생회관" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cE-b4-qSz">
+                                <rect key="frame" x="171" y="426" width="150" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="L0Z-bC-KOP"/>
+                                    <constraint firstAttribute="width" constant="150" id="r58-aw-d5q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbN-AJ-af4" customClass="BEMCheckBox">
+                                <rect key="frame" x="61" y="546" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="drd-ui-HhZ"/>
+                                    <constraint firstAttribute="width" constant="30" id="xgT-gw-iWD"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기숙사" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tor-Kx-1Dn">
+                                <rect key="frame" x="171" y="532" width="150" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Zt6-qi-muQ"/>
+                                    <constraint firstAttribute="width" constant="150" id="hSk-gM-kmX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogg-1f-Nzj">
+                                <rect key="frame" x="22" y="675" width="371" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="371" id="0q6-g9-CvJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="voy-bA-1JJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="편집완료">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="edit:" destination="mn4-2S-TZX" eventType="touchUpInside" id="1s1-8D-Ezj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tor-Kx-1Dn" firstAttribute="leading" secondItem="gbN-AJ-af4" secondAttribute="trailing" constant="80" id="275-KD-5pb"/>
+                            <constraint firstItem="w9s-Wb-dsS" firstAttribute="top" secondItem="v77-Kb-zsT" secondAttribute="top" constant="124" id="47M-jF-cbs"/>
+                            <constraint firstItem="X7T-6Q-iQI" firstAttribute="leading" secondItem="e0U-ZA-JhJ" secondAttribute="trailing" constant="80" id="4Aj-XV-LGp"/>
+                            <constraint firstItem="WKL-PU-g1H" firstAttribute="top" secondItem="v77-Kb-zsT" secondAttribute="top" constant="138" id="8Ad-qp-A4G"/>
+                            <constraint firstItem="X7T-6Q-iQI" firstAttribute="top" secondItem="G1r-cY-gY7" secondAttribute="bottom" constant="40" id="DcR-xk-JK7"/>
+                            <constraint firstItem="v77-Kb-zsT" firstAttribute="bottom" secondItem="Ogg-1f-Nzj" secondAttribute="bottom" constant="83" id="Gga-Ue-94U"/>
+                            <constraint firstItem="w9s-Wb-dsS" firstAttribute="leading" secondItem="WKL-PU-g1H" secondAttribute="trailing" constant="80" id="HMJ-1K-TKT"/>
+                            <constraint firstItem="ofZ-Kz-QRl" firstAttribute="leading" secondItem="v77-Kb-zsT" secondAttribute="leading" constant="61" id="HbT-ez-pI5"/>
+                            <constraint firstItem="gbN-AJ-af4" firstAttribute="leading" secondItem="v77-Kb-zsT" secondAttribute="leading" constant="61" id="LKS-lQ-UVp"/>
+                            <constraint firstItem="v77-Kb-zsT" firstAttribute="trailing" secondItem="w9s-Wb-dsS" secondAttribute="trailing" constant="93" id="Mc9-r3-L3P"/>
+                            <constraint firstItem="0cE-b4-qSz" firstAttribute="leading" secondItem="FMP-pp-Th3" secondAttribute="trailing" constant="80" id="PKG-Aq-gyx"/>
+                            <constraint firstItem="v77-Kb-zsT" firstAttribute="trailing" secondItem="Ogg-1f-Nzj" secondAttribute="trailing" constant="21" id="Pl3-B1-VZG"/>
+                            <constraint firstItem="WKL-PU-g1H" firstAttribute="leading" secondItem="v77-Kb-zsT" secondAttribute="leading" constant="61" id="YW3-xq-tQ5"/>
+                            <constraint firstItem="e0U-ZA-JhJ" firstAttribute="leading" secondItem="v77-Kb-zsT" secondAttribute="leading" constant="61" id="blG-Xg-WMk"/>
+                            <constraint firstItem="ofZ-Kz-QRl" firstAttribute="top" secondItem="WKL-PU-g1H" secondAttribute="bottom" constant="73" id="dW7-R8-pJ7"/>
+                            <constraint firstItem="FMP-pp-Th3" firstAttribute="leading" secondItem="v77-Kb-zsT" secondAttribute="leading" constant="61" id="e9g-HW-KNi"/>
+                            <constraint firstItem="G1r-cY-gY7" firstAttribute="leading" secondItem="ofZ-Kz-QRl" secondAttribute="trailing" constant="80" id="fA4-nJ-Oz2"/>
+                            <constraint firstItem="FMP-pp-Th3" firstAttribute="top" secondItem="e0U-ZA-JhJ" secondAttribute="bottom" constant="69" id="gfg-uC-lEW"/>
+                            <constraint firstItem="tor-Kx-1Dn" firstAttribute="top" secondItem="0cE-b4-qSz" secondAttribute="bottom" constant="46" id="oc1-9N-2gZ"/>
+                            <constraint firstItem="gbN-AJ-af4" firstAttribute="top" secondItem="FMP-pp-Th3" secondAttribute="bottom" constant="76" id="qG6-Q6-Rev"/>
+                            <constraint firstItem="G1r-cY-gY7" firstAttribute="top" secondItem="w9s-Wb-dsS" secondAttribute="bottom" constant="43" id="qaZ-Ht-xGX"/>
+                            <constraint firstItem="e0U-ZA-JhJ" firstAttribute="top" secondItem="ofZ-Kz-QRl" secondAttribute="bottom" constant="70" id="vN9-7Y-Sno"/>
+                            <constraint firstItem="0cE-b4-qSz" firstAttribute="top" secondItem="X7T-6Q-iQI" secondAttribute="bottom" constant="39" id="vh1-OI-h0O"/>
+                            <constraint firstItem="Ogg-1f-Nzj" firstAttribute="leading" secondItem="v77-Kb-zsT" secondAttribute="leading" constant="22" id="w8O-h7-OAY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v77-Kb-zsT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uwy-4G-hqg"/>
+                    <connections>
+                        <outlet property="domitory" destination="gbN-AJ-af4" id="G5E-Yp-Dgt"/>
+                        <outlet property="edu" destination="ofZ-Kz-QRl" id="kf2-HZ-GHT"/>
+                        <outlet property="it" destination="WKL-PU-g1H" id="eM4-UL-U7p"/>
+                        <outlet property="library" destination="e0U-ZA-JhJ" id="9lY-c8-zf6"/>
+                        <outlet property="student" destination="FMP-pp-Th3" id="E2F-FS-7RE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rjp-tI-6ER" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086.9565217391305" y="2484.375"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="UqT-BM-gCc">
+            <objects>
+                <viewController id="hGm-IO-LjG" customClass="bookMarkViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vBz-vI-bHc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDS-Zy-M3h">
+                                <rect key="frame" x="20" y="743" width="374" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="Rjc-yJ-b8q"/>
+                                    <constraint firstAttribute="height" constant="50" id="jtH-yh-fxt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="즐겨찾기 편집">
+                                    <color key="titleColor" red="0.99134376120000001" green="0.99611896280000001" blue="0.99246028119999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="editBookMark:" destination="hGm-IO-LjG" eventType="touchUpInside" id="Uhi-Na-HLn"/>
+                                    <segue destination="mn4-2S-TZX" kind="show" id="YGb-ST-CGW"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zcR-kx-T7W">
+                                <rect key="frame" x="0.0" y="44" width="414" height="679"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dvI-Lp-HvK" firstAttribute="trailing" secondItem="NDS-Zy-M3h" secondAttribute="trailing" constant="20" id="4Um-Tp-CjM"/>
+                            <constraint firstItem="zcR-kx-T7W" firstAttribute="top" secondItem="dvI-Lp-HvK" secondAttribute="top" id="6WM-Qx-H41"/>
+                            <constraint firstItem="NDS-Zy-M3h" firstAttribute="top" secondItem="zcR-kx-T7W" secondAttribute="bottom" constant="20" id="8vA-QN-0Ep"/>
+                            <constraint firstItem="dvI-Lp-HvK" firstAttribute="bottom" secondItem="NDS-Zy-M3h" secondAttribute="bottom" constant="20" id="K01-hH-fZf"/>
+                            <constraint firstItem="NDS-Zy-M3h" firstAttribute="leading" secondItem="dvI-Lp-HvK" secondAttribute="leading" constant="20" id="mUl-da-rje"/>
+                            <constraint firstItem="zcR-kx-T7W" firstAttribute="trailing" secondItem="dvI-Lp-HvK" secondAttribute="trailing" id="mbl-gp-1aQ"/>
+                            <constraint firstItem="zcR-kx-T7W" firstAttribute="leading" secondItem="dvI-Lp-HvK" secondAttribute="leading" id="qc9-88-1kX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dvI-Lp-HvK"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="3Aq-Vy-0Oe"/>
+                    <connections>
+                        <outlet property="bookMarkTable" destination="zcR-kx-T7W" id="I5p-lW-M2Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rjz-7P-dfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.1304347826087" y="1678.7946428571429"/>
+        </scene>
         <!--Item-->
         <scene sceneID="Beo-ha-WBl">
             <objects>
@@ -524,12 +735,14 @@
                 <tabBarController restorationIdentifier="tabView" storyboardIdentifier="tabView" automaticallyAdjustsScrollViewInsets="NO" id="fN7-yA-8cP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="69r-G1-eHX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="79y-oT-rOc" kind="relationship" relationship="viewControllers" id="rob-HA-dmL"/>
                         <segue destination="1ho-sR-mhv" kind="relationship" relationship="viewControllers" id="pdI-WV-BJF"/>
+                        <segue destination="hGm-IO-LjG" kind="relationship" relationship="viewControllers" id="dc2-ra-p0b"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvI-aA-X9h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -10,4 +10,5 @@ target 'CapstoneProject' do
   pod 'AlamofireNetworkActivityIndicator', '~> 2.3'
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'SwiftyJSON'
+  pod 'BEMCheckBox'
 end
