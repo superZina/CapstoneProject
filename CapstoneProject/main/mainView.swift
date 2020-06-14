@@ -104,6 +104,7 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
     }
     func goLocation(latitudeValue: CLLocationDegrees, longitudeValue:CLLocationDegrees , delta span: Double) -> CLLocationCoordinate2D {
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longitudeValue)
+
         let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
         let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
         mainMap.setRegion(pRegion, animated: true)
@@ -153,10 +154,12 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         guard let busStopName = view.annotation?.title else {return}
         PopUp.name = busStopName!
         let preLat = (view.annotation?.coordinate.latitude)!
-        let preLon = view.annotation?.coordinate.longitude
-        let preLoc = CLLocation(latitude: preLat, longitude: preLon!)
+        let preLon = (view.annotation?.coordinate.longitude)!
+        let preLoc = CLLocation(latitude: preLat, longitude: preLon)
         let userLoc = CLLocation(latitude: (self.manager.location?.coordinate.latitude)!, longitude: (self.manager.location?.coordinate.longitude)!)
         PopUp.dis = preLoc.distance(from: userLoc)
+        
+        goLocation(latitudeValue: preLat, longitudeValue: preLon, delta: 0.01)
         self.present(PopUp, animated: true, completion: nil)
     }
   

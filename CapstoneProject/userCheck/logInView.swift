@@ -71,9 +71,16 @@ class logInView: UIViewController {
                         self.present(alert,animated: true)
                     }else{
                         // 아이디 존재, 비밀번호 일치
+                        let token = data["_id"] as! String
+                        let email = data["email"] as! String
+                        let name = data["name"] as! String
+                        let phone = data["phone"] as! String
                         UserDefaults.standard.set(id, forKey: "id")
                         UserDefaults.standard.set(pw, forKey: "password")
-                       
+                        UserDefaults.standard.set(token, forKey: "token")
+                        UserDefaults.standard.set(email, forKey: "email")
+                        UserDefaults.standard.set(name, forKey: "name")
+                        UserDefaults.standard.set(phone, forKey: "phone")
                         let tab = self.storyboard?.instantiateViewController(withIdentifier: "tabView") as! UITabBarController
                         self.navigationController?.pushViewController(tab, animated: true)
                         break
