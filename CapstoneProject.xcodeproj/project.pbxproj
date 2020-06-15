@@ -12,11 +12,13 @@
 		FF8702B524950D1E0050A33E /* bookMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8702B324950D1E0050A33E /* bookMarkTableViewCell.swift */; };
 		FF8702B624950D1E0050A33E /* bookMarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8702B424950D1E0050A33E /* bookMarkTableViewCell.xib */; };
 		FF8B7DB72483D51900DE1B5B /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8B7DB62483D51900DE1B5B /* UserResponse.swift */; };
+		FF94BA5F249774A50017776D /* forgetIdPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94BA5E249774A50017776D /* forgetIdPwViewController.swift */; };
 		FF97B5BD248FD79F00D8AF4D /* busStopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF97B5BB248FD79F00D8AF4D /* busStopTableViewCell.swift */; };
 		FF97B5BE248FD79F00D8AF4D /* busStopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF97B5BC248FD79F00D8AF4D /* busStopTableViewCell.xib */; };
 		FFA9759D2493B7AD0018EC4F /* gpsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA9759C2493B7AD0018EC4F /* gpsDataManager.swift */; };
 		FFA975A32493DBA80018EC4F /* bookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA975A22493DBA80018EC4F /* bookMarkViewController.swift */; };
 		FFA975A92493DC0E0018EC4F /* listPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA975A72493DC0E0018EC4F /* listPopUpView.swift */; };
+		FFAB050B24973B4F00947467 /* busStopDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB050A24973B4F00947467 /* busStopDataManager.swift */; };
 		FFD3B16A246993A100CC5A90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B169246993A100CC5A90 /* AppDelegate.swift */; };
 		FFD3B16C246993A100CC5A90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B16B246993A100CC5A90 /* SceneDelegate.swift */; };
 		FFD3B16E246993A100CC5A90 /* logInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3B16D246993A100CC5A90 /* logInView.swift */; };
@@ -40,11 +42,13 @@
 		FF8702B324950D1E0050A33E /* bookMarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookMarkTableViewCell.swift; sourceTree = "<group>"; };
 		FF8702B424950D1E0050A33E /* bookMarkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = bookMarkTableViewCell.xib; sourceTree = "<group>"; };
 		FF8B7DB62483D51900DE1B5B /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		FF94BA5E249774A50017776D /* forgetIdPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgetIdPwViewController.swift; sourceTree = "<group>"; };
 		FF97B5BB248FD79F00D8AF4D /* busStopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busStopTableViewCell.swift; sourceTree = "<group>"; };
 		FF97B5BC248FD79F00D8AF4D /* busStopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = busStopTableViewCell.xib; sourceTree = "<group>"; };
 		FFA9759C2493B7AD0018EC4F /* gpsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsDataManager.swift; sourceTree = "<group>"; };
 		FFA975A22493DBA80018EC4F /* bookMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookMarkViewController.swift; sourceTree = "<group>"; };
 		FFA975A72493DC0E0018EC4F /* listPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listPopUpView.swift; sourceTree = "<group>"; };
+		FFAB050A24973B4F00947467 /* busStopDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busStopDataManager.swift; sourceTree = "<group>"; };
 		FFD3B166246993A100CC5A90 /* CapstoneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapstoneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD3B169246993A100CC5A90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFD3B16B246993A100CC5A90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 		FFA975A12493DB820018EC4F /* bookMarkList */ = {
 			isa = PBXGroup;
 			children = (
+				FFAB050924973B2300947467 /* DataManager */,
 				FFA975A42493DBD20018EC4F /* PopUp */,
 				FFA975A22493DBA80018EC4F /* bookMarkViewController.swift */,
 				FF8702B324950D1E0050A33E /* bookMarkTableViewCell.swift */,
@@ -116,6 +121,14 @@
 				FFA975A72493DC0E0018EC4F /* listPopUpView.swift */,
 			);
 			path = PopUp;
+			sourceTree = "<group>";
+		};
+		FFAB050924973B2300947467 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB050A24973B4F00947467 /* busStopDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		FFD3B15D246993A000CC5A90 = {
@@ -188,6 +201,7 @@
 				FFD3B16D246993A100CC5A90 /* logInView.swift */,
 				FF40EB19246A6D840096C3C2 /* registerViewController.swift */,
 				FF8B7DB62483D51900DE1B5B /* UserResponse.swift */,
+				FF94BA5E249774A50017776D /* forgetIdPwViewController.swift */,
 			);
 			path = userCheck;
 			sourceTree = "<group>";
@@ -326,11 +340,13 @@
 				FF97B5BD248FD79F00D8AF4D /* busStopTableViewCell.swift in Sources */,
 				FFD3B174246993A100CC5A90 /* CapstoneProject.xcdatamodeld in Sources */,
 				FFF8D92B246D31FA00766074 /* mainView.swift in Sources */,
+				FF94BA5F249774A50017776D /* forgetIdPwViewController.swift in Sources */,
 				FFA975A92493DC0E0018EC4F /* listPopUpView.swift in Sources */,
 				FFD3B16E246993A100CC5A90 /* logInView.swift in Sources */,
 				FF8B7DB72483D51900DE1B5B /* UserResponse.swift in Sources */,
 				FFF8D92D246D515200766074 /* updateUserView.swift in Sources */,
 				FFD3B16A246993A100CC5A90 /* AppDelegate.swift in Sources */,
+				FFAB050B24973B4F00947467 /* busStopDataManager.swift in Sources */,
 				FF40EB1A246A6D840096C3C2 /* registerViewController.swift in Sources */,
 				FFD501A5248F657C007D9396 /* busStopListViewController.swift in Sources */,
 				FFD3B16C246993A100CC5A90 /* SceneDelegate.swift in Sources */,

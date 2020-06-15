@@ -1,20 +1,20 @@
 //
-//  loginDataManager.swift
-//  ios
+//  busStopDataManager.swift
+//  CapstoneProject
 //
-//  Created by 이진하 on 2020/05/29.
-//  Copyright © 2020 Jerry Jung. All rights reserved.
+//  Created by 이진하 on 2020/06/15.
+//  Copyright © 2020 이진하. All rights reserved.
 //
 
 import Alamofire
 import AlamofireObjectMapper
 import MapKit
 
-class gpsDataManager {
+class busStopDataManager {
 
     let url = "http://localhost:3000/connect_mongodb/find"
     
-    func getUser(_ mainView: mainView ){
+    func getUser(_ mainView: bookMarkViewController ){
         Alamofire
             .request(url, method: .post)
             .validate()
@@ -30,10 +30,9 @@ class gpsDataManager {
                 print(Long["value"])
 //                let lat = Lat["value"]
 //                let lon = Long["value"] as! Double
-                let destinationPosition = CLLocationCoordinate2D(latitude: 37.451954, longitude: 127.128936 )
-                UIView.animate(withDuration: 4, animations: {
-                    mainView.myAnnotation.coordinate = destinationPosition
-                })
+                let destinationPosition = CLLocation(latitude: 37.4930281, longitude: 127.140036 )
+                    
+                mainView.busLocation = destinationPosition
         }
         
     }
