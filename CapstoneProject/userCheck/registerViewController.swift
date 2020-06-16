@@ -25,7 +25,6 @@ class registerViewController: UIViewController {
         self.present(alert,animated: true)
         self.navigationController?.popViewController(animated: true)
     }
-    var isIDChecked:Bool = false
     
     @IBAction func checkID(_ sender: Any) {
 //        let id = ID.text as! String
@@ -47,7 +46,6 @@ class registerViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        isIDChecked = false
 //        manager.idExist = false
     }
     
