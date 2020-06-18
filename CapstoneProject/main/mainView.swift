@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import UserNotifications
+import Alamofire
 
 class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
     var userId:String = (UserDefaults.standard.value(forKey: "id") as? String)!
@@ -30,15 +32,45 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         mainMap.setRegion(region, animated: true)
     }
     
+    //즐겨찾기한 버스정류장 불러오기
+    var selectedIndex:[Int] = UserDefaults.standard.value(forKey: "selected") as! [Int]
+    let totalBusStop:[String] = ["IT대학교", "교육대학원","중앙도서관","학생회관","기숙사"]
+    var newSelected:[String] = []
+    
     
     @IBAction func updateLocation(_ sender: Any) {
-        gpsDataManager().getUser(self)
-//        })
+        
+        
+        let url = "http://localhost:3000/connect_mongodb/find"
+        
+        Alamofire
+            .request(url, method: .post)
+            .validate()
+            .responseJSON{ (res) in
+                guard let jsonObject = res.result.value as? NSArray else {
+                    NSLog("서버 호출 과정에서 에러 발생")
+                    return
+                }
+                print(jsonObject)
+                let Lat = jsonObject[0] as! NSDictionary
+                let Long = jsonObject[1] as! NSDictionary
+                print(Lat["value"])
+                print(Long["value"])
+                //                let lat = Lat["value"]
+                //                let lon = Long["value"] as! Double
+                let destinationPosition = CLLocationCoordinate2D(latitude: 37.451954, longitude: 127.128936 )
+                UIView.animate(withDuration: 4, animations: {
+                    self.myAnnotation.coordinate = destinationPosition
+                })
+        }
+        
     }
     
     
     @IBOutlet weak var mainMap: MKMapView!
     @IBOutlet weak var location: UILabel!
+    
+    
     var manager = CLLocationManager()
     var myLocations: [CLLocation] = []
     let myAnnotation = MKPointAnnotation()
@@ -47,7 +79,7 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isTranslucent = false
-//        gpsDataManager().getUser(self)
+        //        gpsDataManager().getUser(self)
     }
     var annotaions:[BusStop] = []
     
@@ -58,6 +90,10 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         let cancelAction = UIAlertAction(title: "확인", style: .cancel)
         alert.addAction(cancelAction)
         self.present(alert,animated: true)
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (result, Error) in
+            print(result)
+        }
         
         mainMap.delegate = self
         //locationManagerDelegate
@@ -71,16 +107,14 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         mainMap.mapType = MKMapType.standard
         mainMap.showsUserLocation = true
         
-        //메인뷰에 특정 위치 표시하기(정류소 위치 표시하기)
-//        setAnnotaion(lat: lat, lon: lon, delta: 1, title: "가천대학교", subtitle: "글로벌 캠퍼스")
         
         let IT = BusStop(title: "IT대학교", coordinate: CLLocationCoordinate2D(latitude: 37.450963, longitude: 127.127133), subtitle: "IT대 정류장")
         let edu = BusStop(title: "교육대학원", coordinate: CLLocationCoordinate2D(latitude: 37.451819, longitude: 127.131554), subtitle: "교육대학원 정류장")
         let library = BusStop(title: "중앙도서관", coordinate: CLLocationCoordinate2D(latitude: 37.452466, longitude: 127.132906), subtitle: "중앙도서관 정류장")
         let student = BusStop(title: "학생회관", coordinate: CLLocationCoordinate2D(latitude:  37.450963, longitude: 127.134065), subtitle: "학생회관 정류장")
         let domitory = BusStop(title: "기숙사", coordinate: CLLocationCoordinate2D(latitude: 37.456154, longitude: 127.135095), subtitle: "기숙사 앞 정류장")
+        
 
-        let startPostion = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         annotaions = [IT,edu,library,student,domitory]
         mainMap.addAnnotation(IT)
         mainMap.addAnnotation(domitory)
@@ -88,23 +122,48 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         mainMap.addAnnotation(library)
         mainMap.addAnnotation(edu)
         mainMap.addAnnotation(myAnnotation)
-    }
-    
-    
-    
-    
-    @IBAction func myLocation(_ sender: Any) {
-        let title = "IT대학교"
-//        manager.startUpdatingLocation()
-        for annotation in self.mainMap.annotations {
-            if annotation.title == title{
-                self.mainMap.selectAnnotation(annotation, animated: true)
+        
+        
+        //즐겨찾기 정류장 업데이트
+        for i in selectedIndex {
+            newSelected.append(totalBusStop[i])
+        }
+        print(myAnnotation.coordinate)
+        //알림 스레드(백그라운드)
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { (timer) in
+                    DispatchQueue.global(qos: .background).async {
+                for annotaion in self.mainMap.annotations {
+                    for i in self.newSelected {
+                        if annotaion.title == i {
+                            if self.myAnnotation.coordinate.latitude != 0.0 {
+                                var distance = CLLocation(latitude: self.myAnnotation.coordinate.latitude, longitude: self.myAnnotation.coordinate.longitude).distance(from: CLLocation(latitude: annotaion.coordinate.latitude, longitude: annotaion.coordinate.latitude))
+                                print(annotaion.title)
+                                print(distance)
+                            if  distance < 7687795 {
+                                           let content = UNMutableNotificationContent()
+                                           content.title = "버스 알리미"
+                                           content.body = "버스가 곧 도착합니다 "
+                                           content.badge = 1
+                                           let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                                           let request = UNNotificationRequest(identifier: "test", content: content, trigger: trigger)
+                                           UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                                       }
+                            }
+                        }
+                    }
+                }
+               
             }
+
         }
     }
+    
+    
+    
+    
     func goLocation(latitudeValue: CLLocationDegrees, longitudeValue:CLLocationDegrees , delta span: Double) -> CLLocationCoordinate2D {
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longitudeValue)
-
+        
         let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
         let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
         mainMap.setRegion(pRegion, animated: true)
@@ -162,5 +221,5 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         goLocation(latitudeValue: preLat, longitudeValue: preLon, delta: 0.01)
         self.present(PopUp, animated: true, completion: nil)
     }
-  
+    
 }

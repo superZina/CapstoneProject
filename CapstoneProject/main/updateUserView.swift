@@ -5,11 +5,11 @@
 //  Created by 이진하 on 2020/05/14.
 //  Copyright © 2020 이진하. All rights reserved.
 //
-
+import UserNotifications
 import UIKit
 import Alamofire
 
-class updateUserView: UIViewController {
+class updateUserView: UIViewController, UNUserNotificationCenterDelegate {
     let id:String = UserDefaults.standard.value(forKey: "id") as! String
     let token:String = UserDefaults.standard.value(forKey: "token") as! String
     @IBOutlet weak var uesrID: UILabel!
@@ -19,7 +19,6 @@ class updateUserView: UIViewController {
     @IBOutlet weak var name: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         let id:String = UserDefaults.standard.value(forKey: "id") as! String
@@ -34,6 +33,13 @@ class updateUserView: UIViewController {
         self.email.text = email
         
     }
+    
+    @IBOutlet weak var alarmOnOff: UISwitch!
+    @IBAction func alarm(_ sender: Any) {
+
+        
+    }
+    
     @IBAction func updateUserInfo(_ sender: Any) {
         let url = "http://127.0.0.1:3000/api/User/\(self.token)"
         guard let phone:String = phone.text , let email:String = email.text, let pw:String = password.text, let name:String = name.text else {return}

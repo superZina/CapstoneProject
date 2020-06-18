@@ -28,8 +28,7 @@ class bookMarkViewController: UIViewController {
         location = [CLLocation(latitude: 37.450963, longitude: 127.127133),CLLocation(latitude: 37.451819, longitude: 127.131554),CLLocation(latitude: 37.452466, longitude: 127.132906),CLLocation(latitude:  37.450963, longitude: 127.134065),CLLocation(latitude: 37.456154, longitude: 127.135095)]
             }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.bookMarkTable.reloadData()
+    override func viewWillAppear(_ animated: Bool) {        self.bookMarkTable.reloadData()
         busStopDataManager().getUser(self)
         selectedIndex = UserDefaults.standard.value(forKey: "selected") as! [Int]
         var newSelected:[String] = []
