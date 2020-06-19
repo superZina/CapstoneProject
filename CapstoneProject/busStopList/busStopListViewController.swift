@@ -9,7 +9,7 @@
 import UIKit
 
 class busStopListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var busStop:[String] = ["IT대학교","교육대학원","중앙도서관","학생회관","기숙사"]
+    var busStop:[String] = ["IT대학교", "교육대학원","학생회관","기숙사","예술대학"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         busStop.count
     }
@@ -18,6 +18,7 @@ class busStopListViewController: UIViewController,UITableViewDelegate,UITableVie
         guard let cell = busStopTable.dequeueReusableCell(withIdentifier: "busStopCell") as? busStopTableViewCell else {return UITableViewCell()}
         cell.busStopName.setTitle(busStop[indexPath.row], for: .normal)
         cell.busStopName.addTarget(self, action: #selector(seeLocation(_:)), for: .allTouchEvents)
+        cell.seePeople.addTarget(self, action: #selector(seePeople(_:)), for: .allTouchEvents)
         return cell
     }
     
@@ -41,5 +42,18 @@ class busStopListViewController: UIViewController,UITableViewDelegate,UITableVie
             }
         }
         
+    }
+    @objc func seePeople(_ sender: UIButton) {
+
+        let busStopViewStoryboard =  UIStoryboard(name: "presentBusStop", bundle: Bundle.main)
+        guard let PopUp = busStopViewStoryboard
+            .instantiateViewController(withIdentifier: "presentBusStop") as? presentBusStopViewController else {
+                print("there's no popup")
+                return
+        }
+
+        PopUp.modalPresentationStyle = .custom
+        self.present(PopUp, animated: true, completion: nil)
+
     }
 }

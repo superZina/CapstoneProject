@@ -12,6 +12,9 @@
 		FF8702B524950D1E0050A33E /* bookMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8702B324950D1E0050A33E /* bookMarkTableViewCell.swift */; };
 		FF8702B624950D1E0050A33E /* bookMarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8702B424950D1E0050A33E /* bookMarkTableViewCell.xib */; };
 		FF8B7DB72483D51900DE1B5B /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8B7DB62483D51900DE1B5B /* UserResponse.swift */; };
+		FF8FD71D249C8F8D00F3EEA6 /* presentBusStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8FD71B249C8F8D00F3EEA6 /* presentBusStopViewController.swift */; };
+		FF8FD720249C903F00F3EEA6 /* presentBusStop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8FD71F249C903F00F3EEA6 /* presentBusStop.storyboard */; };
+		FF8FD722249C99F300F3EEA6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8FD721249C99F300F3EEA6 /* WebKit.framework */; };
 		FF94BA5F249774A50017776D /* forgetIdPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF94BA5E249774A50017776D /* forgetIdPwViewController.swift */; };
 		FF97B5BD248FD79F00D8AF4D /* busStopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF97B5BB248FD79F00D8AF4D /* busStopTableViewCell.swift */; };
 		FF97B5BE248FD79F00D8AF4D /* busStopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF97B5BC248FD79F00D8AF4D /* busStopTableViewCell.xib */; };
@@ -42,6 +45,9 @@
 		FF8702B324950D1E0050A33E /* bookMarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookMarkTableViewCell.swift; sourceTree = "<group>"; };
 		FF8702B424950D1E0050A33E /* bookMarkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = bookMarkTableViewCell.xib; sourceTree = "<group>"; };
 		FF8B7DB62483D51900DE1B5B /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		FF8FD71B249C8F8D00F3EEA6 /* presentBusStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = presentBusStopViewController.swift; sourceTree = "<group>"; };
+		FF8FD71F249C903F00F3EEA6 /* presentBusStop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = presentBusStop.storyboard; sourceTree = "<group>"; };
+		FF8FD721249C99F300F3EEA6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FF94BA5E249774A50017776D /* forgetIdPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgetIdPwViewController.swift; sourceTree = "<group>"; };
 		FF97B5BB248FD79F00D8AF4D /* busStopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busStopTableViewCell.swift; sourceTree = "<group>"; };
 		FF97B5BC248FD79F00D8AF4D /* busStopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = busStopTableViewCell.xib; sourceTree = "<group>"; };
@@ -71,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8FD722249C99F300F3EEA6 /* WebKit.framework in Frameworks */,
 				E04C154FA73ACFC0DD8AFA48 /* Pods_CapstoneProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +97,7 @@
 		7DAAB399EAA17F3B43ABFDEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF8FD721249C99F300F3EEA6 /* WebKit.framework */,
 				2EB8B5854D6E049C7836E039 /* Pods_CapstoneProject.framework */,
 			);
 			name = Frameworks;
@@ -183,6 +191,8 @@
 				FFD501A4248F657C007D9396 /* busStopListViewController.swift */,
 				FF97B5BB248FD79F00D8AF4D /* busStopTableViewCell.swift */,
 				FF97B5BC248FD79F00D8AF4D /* busStopTableViewCell.xib */,
+				FF8FD71B249C8F8D00F3EEA6 /* presentBusStopViewController.swift */,
+				FF8FD71F249C903F00F3EEA6 /* presentBusStop.storyboard */,
 			);
 			path = busStopList;
 			sourceTree = "<group>";
@@ -280,6 +290,7 @@
 				FF97B5BE248FD79F00D8AF4D /* busStopTableViewCell.xib in Resources */,
 				FFD3B179246993A300CC5A90 /* LaunchScreen.storyboard in Resources */,
 				FFD5019F248F49BD007D9396 /* popUpView.storyboard in Resources */,
+				FF8FD720249C903F00F3EEA6 /* presentBusStop.storyboard in Resources */,
 				FF8702B624950D1E0050A33E /* bookMarkTableViewCell.xib in Resources */,
 				FFD3B176246993A300CC5A90 /* Assets.xcassets in Resources */,
 				FFD3B171246993A100CC5A90 /* Main.storyboard in Resources */,
@@ -337,6 +348,7 @@
 			files = (
 				FFA975A32493DBA80018EC4F /* bookMarkViewController.swift in Sources */,
 				FFA9759D2493B7AD0018EC4F /* gpsDataManager.swift in Sources */,
+				FF8FD71D249C8F8D00F3EEA6 /* presentBusStopViewController.swift in Sources */,
 				FF97B5BD248FD79F00D8AF4D /* busStopTableViewCell.swift in Sources */,
 				FFD3B174246993A100CC5A90 /* CapstoneProject.xcdatamodeld in Sources */,
 				FFF8D92B246D31FA00766074 /* mainView.swift in Sources */,

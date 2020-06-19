@@ -24,7 +24,7 @@ class bookMarkViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        total = ["IT대학교", "교육대학원","중앙도서관","학생회관","기숙사"]
+        total = ["IT대학교", "교육대학원","학생회관","기숙사","예술대학"]
         location = [CLLocation(latitude: 37.450963, longitude: 127.127133),CLLocation(latitude: 37.451819, longitude: 127.131554),CLLocation(latitude: 37.452466, longitude: 127.132906),CLLocation(latitude:  37.450963, longitude: 127.134065),CLLocation(latitude: 37.456154, longitude: 127.135095)]
             }
     

@@ -32,6 +32,9 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-MI-DzG">
                         <rect key="frame" x="196" y="39" width="108" height="30"/>
                         <state key="normal" title="대기인원 확인하기"/>
+                        <connections>
+                            <action selector="presentBusStop:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ccG-v7-RUE"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

@@ -14,6 +14,8 @@ class busStopTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var seePeople: UIButton!
     @IBOutlet weak var busStopName: UIButton!
+    @IBAction func presentBusStop(_ sender: Any) {
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

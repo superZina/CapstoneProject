@@ -296,7 +296,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvz-XG-em2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvz-XG-em2">
                                 <rect key="frame" x="376" y="774" width="18" height="22"/>
                                 <color key="backgroundColor" red="0.61221651310000003" green="0.78598279910000002" blue="0.42373228800000001" alpha="0.92628959759999996" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -305,7 +305,7 @@
                                     <action selector="aoomOutMap:" destination="79y-oT-rOc" eventType="touchUpInside" id="e40-yj-Pbn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sja-ZL-cZn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sja-ZL-cZn">
                                 <rect key="frame" x="350" y="774" width="18" height="22"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -314,31 +314,19 @@
                                     <action selector="zoomMap:" destination="79y-oT-rOc" eventType="touchUpInside" id="8Ge-KQ-neY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQl-9U-8pl">
-                                <rect key="frame" x="253" y="770" width="81" height="30"/>
-                                <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="arrow.clockwise" catalog="system"/>
-                                <connections>
-                                    <action selector="updateLocation:" destination="79y-oT-rOc" eventType="touchUpInside" id="489-CN-pmK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="GQl-9U-8pl" firstAttribute="top" secondItem="EeZ-0Y-59S" secondAttribute="bottom" constant="4" id="799-de-dAr"/>
                             <constraint firstItem="Vvz-XG-em2" firstAttribute="top" secondItem="EeZ-0Y-59S" secondAttribute="bottom" constant="8" id="8bh-nt-k0X"/>
                             <constraint firstItem="LPs-DB-t7b" firstAttribute="bottom" secondItem="dqK-Uo-jeZ" secondAttribute="bottom" constant="18" id="Fue-XA-0bQ"/>
-                            <constraint firstItem="sja-ZL-cZn" firstAttribute="leading" secondItem="GQl-9U-8pl" secondAttribute="trailing" constant="16" id="Knj-bu-Kaf"/>
                             <constraint firstItem="Vvz-XG-em2" firstAttribute="leading" secondItem="sja-ZL-cZn" secondAttribute="trailing" constant="8" id="UIo-rm-Cnp"/>
                             <constraint firstItem="LPs-DB-t7b" firstAttribute="trailing" secondItem="Vvz-XG-em2" secondAttribute="trailing" constant="20" id="VXL-hA-Ug2"/>
                             <constraint firstItem="dqK-Uo-jeZ" firstAttribute="top" secondItem="EeZ-0Y-59S" secondAttribute="bottom" constant="8" id="WBG-Py-jis"/>
                             <constraint firstItem="LPs-DB-t7b" firstAttribute="bottom" secondItem="Vvz-XG-em2" secondAttribute="bottom" constant="17" id="XNe-t5-OYc"/>
                             <constraint firstItem="EeZ-0Y-59S" firstAttribute="trailing" secondItem="LPs-DB-t7b" secondAttribute="trailing" id="ZLv-gb-Q5H"/>
                             <constraint firstItem="EeZ-0Y-59S" firstAttribute="top" secondItem="LPs-DB-t7b" secondAttribute="top" id="ZlG-J5-Qxd"/>
-                            <constraint firstItem="LPs-DB-t7b" firstAttribute="bottom" secondItem="GQl-9U-8pl" secondAttribute="bottom" constant="13" id="aQE-39-7nE"/>
                             <constraint firstItem="LPs-DB-t7b" firstAttribute="bottom" secondItem="sja-ZL-cZn" secondAttribute="bottom" constant="17" id="cCY-bP-32U"/>
                             <constraint firstItem="EeZ-0Y-59S" firstAttribute="leading" secondItem="LPs-DB-t7b" secondAttribute="leading" id="e7Y-TX-0fZ"/>
-                            <constraint firstItem="GQl-9U-8pl" firstAttribute="leading" relation="lessThanOrEqual" secondItem="dqK-Uo-jeZ" secondAttribute="trailing" constant="220" id="qi3-ht-EzT"/>
                             <constraint firstItem="dqK-Uo-jeZ" firstAttribute="leading" secondItem="LPs-DB-t7b" secondAttribute="leading" constant="20" id="rSc-mK-9Ct"/>
                             <constraint firstItem="sja-ZL-cZn" firstAttribute="top" secondItem="EeZ-0Y-59S" secondAttribute="bottom" constant="8" id="xaO-o2-O98"/>
                         </constraints>
@@ -990,7 +978,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="logo" width="386" height="386"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

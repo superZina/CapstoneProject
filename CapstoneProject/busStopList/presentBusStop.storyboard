@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Present Bus Stop View Controller-->
+        <scene sceneID="e6Y-rw-wS2">
+            <objects>
+                <viewController restorationIdentifier="presentBusStop" storyboardIdentifier="presentBusStop" id="OwM-a0-Wtj" customClass="presentBusStopViewController" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3fK-dn-aY0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정류소 현황보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se0-uI-kgh">
+                                <rect key="frame" x="153" y="72" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Nf-LT-FNw">
+                                <rect key="frame" x="359" y="55" width="21" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark.octagon.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="exit:" destination="OwM-a0-Wtj" eventType="touchUpInside" id="bjJ-c5-YLP"/>
+                                </connections>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEp-Q2-OW2">
+                                <rect key="frame" x="20" y="108" width="374" height="754"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6bj-i8-6CB" firstAttribute="trailing" secondItem="Se0-uI-kgh" secondAttribute="trailing" constant="153" id="6W0-wc-ZOU"/>
+                            <constraint firstItem="Se0-uI-kgh" firstAttribute="leading" secondItem="6bj-i8-6CB" secondAttribute="leading" constant="153" id="87m-uE-XhY"/>
+                            <constraint firstItem="6bj-i8-6CB" firstAttribute="trailing" secondItem="cEp-Q2-OW2" secondAttribute="trailing" constant="20" id="E1f-YJ-CiJ"/>
+                            <constraint firstItem="Se0-uI-kgh" firstAttribute="top" secondItem="6bj-i8-6CB" secondAttribute="top" constant="28" id="NnW-W8-SYB"/>
+                            <constraint firstItem="cEp-Q2-OW2" firstAttribute="leading" secondItem="6bj-i8-6CB" secondAttribute="leading" constant="20" id="S8c-al-0F9"/>
+                            <constraint firstItem="cEp-Q2-OW2" firstAttribute="bottom" secondItem="6bj-i8-6CB" secondAttribute="bottom" id="SBm-g7-w7G"/>
+                            <constraint firstItem="cEp-Q2-OW2" firstAttribute="top" secondItem="Se0-uI-kgh" secondAttribute="bottom" constant="15" id="mbm-eb-nnh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6bj-i8-6CB"/>
+                    </view>
+                    <connections>
+                        <outlet property="busWeb" destination="cEp-Q2-OW2" id="RaX-jq-sbl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nML-Zi-3BB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153.62318840579712" y="156.69642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark.octagon.fill" catalog="system" width="128" height="112"/>
+    </resources>
+</document>
