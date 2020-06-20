@@ -25,7 +25,8 @@ struct user {
     }
 }
 class logInView: UIViewController {
-    
+    @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var logInBtn: UIButton!
     var userList:[user] = []
     
     let url = "http://127.0.0.1:3000/api/User"
@@ -33,11 +34,16 @@ class logInView: UIViewController {
     @IBOutlet weak var ID: UITextField!
     @IBOutlet weak var Password: UITextField!
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.registerBtn.layer.cornerRadius = 8
+        self.navigationController?.navigationBar.tintColor = .black
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ID.delegate = self
         self.Password.delegate = self
+        self.logInBtn.layer.cornerRadius = 8
+        
     }
     
     @IBAction func logIn(_ sender: Any) {

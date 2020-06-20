@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--로그인-->
+        <!--셔틀버스 위치 알리미-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="logInView" customModule="CapstoneProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5l-86-2zw">
                                 <rect key="frame" x="62" y="682" width="290" height="47"/>
-                                <color key="backgroundColor" red="0.65373152489999997" green="0.80472964049999995" blue="0.96472805740000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.57507493081979688" green="0.099962514241749428" blue="0.078419573219071559" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="U3U-yu-BkB"/>
                                     <constraint firstAttribute="height" constant="47" id="aBE-Hb-fEj"/>
@@ -43,16 +43,16 @@
                                     <segue destination="bHo-De-0TL" kind="show" id="QN0-ra-NWd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ig-1k-EYr">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ig-1k-EYr">
                                 <rect key="frame" x="62" y="495" width="290" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" id="Qgm-DQ-Jxf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="무당이로고" id="Qgm-DQ-Jxf">
                                 <rect key="frame" x="108" y="165" width="199" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t3C-Qs-zaM">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t3C-Qs-zaM">
                                 <rect key="frame" x="62" y="413" width="290" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -87,10 +87,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="로그인" id="4i0-BH-cM8"/>
+                    <navigationItem key="navigationItem" title="셔틀버스 위치 알리미" id="4i0-BH-cM8"/>
                     <connections>
                         <outlet property="ID" destination="t3C-Qs-zaM" id="2aX-cn-fze"/>
                         <outlet property="Password" destination="6ig-1k-EYr" id="6kj-ky-M3t"/>
+                        <outlet property="logInBtn" destination="fZ8-k2-lEU" id="YxA-RR-Yli"/>
+                        <outlet property="registerBtn" destination="u5l-86-2zw" id="zO9-vc-7U0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -848,10 +850,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeF-HT-dV1">
-                                <rect key="frame" x="38" y="748" width="338" height="40"/>
-                                <color key="backgroundColor" red="0.65373152489999997" green="0.80472964049999995" blue="0.96472805740000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="38" y="748" width="338" height="54"/>
+                                <color key="backgroundColor" red="0.57507493080000005" green="0.099962514239999994" blue="0.078419573219999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="338" id="YMa-Qi-1Ka"/>
+                                    <constraint firstAttribute="height" constant="54" id="wy8-Rl-Qwv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -862,7 +865,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXy-6T-xZh">
                                 <rect key="frame" x="286" y="195" width="90" height="46"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="PYu-7t-qLQ"/>
                                     <constraint firstAttribute="height" constant="46" id="tkK-fL-5XZ"/>
@@ -899,7 +902,6 @@
                             <constraint firstItem="W6f-D2-2X8" firstAttribute="trailing" secondItem="tQk-GN-Yva" secondAttribute="trailing" constant="38" id="0qT-9j-hCK"/>
                             <constraint firstItem="aXy-6T-xZh" firstAttribute="top" secondItem="W6f-D2-2X8" secondAttribute="top" constant="107" id="3nK-DY-Zuy"/>
                             <constraint firstItem="cS5-Z5-RrI" firstAttribute="leading" secondItem="W6f-D2-2X8" secondAttribute="leading" constant="38" id="5wa-T4-Qv3"/>
-                            <constraint firstItem="W6f-D2-2X8" firstAttribute="bottom" secondItem="yeF-HT-dV1" secondAttribute="bottom" constant="74" id="7JD-Tv-3eF"/>
                             <constraint firstItem="OhH-Zj-wy5" firstAttribute="leading" secondItem="W6f-D2-2X8" secondAttribute="leading" constant="38" id="DRW-Bc-M4v"/>
                             <constraint firstItem="cS5-Z5-RrI" firstAttribute="top" secondItem="bvL-oN-15z" secondAttribute="bottom" constant="44" id="ECa-Zy-Z6K"/>
                             <constraint firstItem="zGX-yd-gdl" firstAttribute="leading" secondItem="W6f-D2-2X8" secondAttribute="leading" constant="38" id="JSU-ye-vxY"/>
@@ -911,6 +913,7 @@
                             <constraint firstItem="W6f-D2-2X8" firstAttribute="trailing" secondItem="cS5-Z5-RrI" secondAttribute="trailing" constant="38" id="ZfM-Gz-8Y8"/>
                             <constraint firstItem="W6f-D2-2X8" firstAttribute="trailing" secondItem="aXy-6T-xZh" secondAttribute="trailing" constant="38" id="aJv-Bz-jwm"/>
                             <constraint firstItem="bvL-oN-15z" firstAttribute="leading" secondItem="W6f-D2-2X8" secondAttribute="leading" constant="38" id="ajm-Ex-WTM"/>
+                            <constraint firstItem="W6f-D2-2X8" firstAttribute="bottom" secondItem="yeF-HT-dV1" secondAttribute="bottom" constant="60" id="bLh-ON-XBz"/>
                             <constraint firstItem="W6f-D2-2X8" firstAttribute="trailing" secondItem="zGX-yd-gdl" secondAttribute="trailing" constant="38" id="d5T-KT-nfD"/>
                             <constraint firstItem="aXy-6T-xZh" firstAttribute="leading" secondItem="Wnp-Hh-FLK" secondAttribute="trailing" constant="36" id="g1J-mY-rXH"/>
                             <constraint firstItem="W6f-D2-2X8" firstAttribute="trailing" secondItem="yeF-HT-dV1" secondAttribute="trailing" constant="38" id="nNc-Yk-MgC"/>
@@ -930,11 +933,12 @@
                         <outlet property="Password" destination="bvL-oN-15z" id="Y5a-kq-FrX"/>
                         <outlet property="PasswordCF" destination="cS5-Z5-RrI" id="QbN-Yp-Vig"/>
                         <outlet property="PhoneNum" destination="tQk-GN-Yva" id="oP8-XS-feN"/>
+                        <outlet property="register" destination="yeF-HT-dV1" id="ATS-r7-7BV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jw-UL-0WR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="-695"/>
+            <point key="canvasLocation" x="1863.7681159420292" y="-695.08928571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Zu-kU-TgD">
@@ -978,9 +982,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="386" height="386"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="무당이로고" width="614" height="614"/>
     </resources>
 </document>
