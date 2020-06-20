@@ -29,8 +29,20 @@ class listPopUpView: UIViewController {
         
         super.viewDidLoad()
                 
+        self.editBtn.layer.cornerRadius = 5
+        self.domitory.layer.cornerRadius = 5
+        self.itLabel.layer.cornerRadius = 5
+        self.stuLabel.layer.cornerRadius = 5
+        self.libLabel.layer.cornerRadius = 5
+        self.eduLabel.layer.cornerRadius = 5
+        
     }
-
+    @IBOutlet weak var itLabel: UILabel!
+    @IBOutlet weak var domLabel: UILabel!
+    @IBOutlet weak var stuLabel: UILabel!
+    @IBOutlet weak var libLabel: UILabel!
+    @IBOutlet weak var eduLabel: UILabel!
+    @IBOutlet weak var editBtn: UIButton!
     @IBAction func edit(_ sender: Any) {
          self.dismiss(animated: true, completion: nil)
         for box in checkBoxes {

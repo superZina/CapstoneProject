@@ -31,15 +31,14 @@ class updateUserView: UIViewController, UNUserNotificationCenterDelegate {
         self.phone.text = phone
         self.name.text = name
         self.email.text = email
-        
+        self.deleteBtn.layer.cornerRadius = 5
+        self.logouBtn.layer.cornerRadius = 5
+        self.updateBtn.layer.cornerRadius = 5
     }
     
-    @IBOutlet weak var alarmOnOff: UISwitch!
-    @IBAction func alarm(_ sender: Any) {
-
-        
-    }
-    
+    @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var logouBtn: UIButton!
+    @IBOutlet weak var updateBtn: UIButton!
     @IBAction func updateUserInfo(_ sender: Any) {
         let url = "http://127.0.0.1:3000/api/User/\(self.token)"
         guard let phone:String = phone.text , let email:String = email.text, let pw:String = password.text, let name:String = name.text else {return}

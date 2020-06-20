@@ -15,6 +15,8 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
     var userId:String = (UserDefaults.standard.value(forKey: "id") as? String)!
     let url = "http://localhost:3000/connect_mongodb/find"
     
+    @IBOutlet weak var zoomOut: UIButton!
+    @IBOutlet weak var zoomIn: UIButton!
     //지도 확대, 축소 버튼
     @IBAction func zoomMap(_ sender: Any) {
         var region: MKCoordinateRegion = mainMap.region
@@ -48,6 +50,11 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isTranslucent = false
         //        gpsDataManager().getUser(self)
+        self.zoomIn.layer.cornerRadius = 12
+        self.zoomOut.layer.cornerRadius = 12
+        self.tabBarController?.tabBar.tintColor = .black
+        self.tabBarController?.tabBarItem.image = UIImage(named: "homeIcon")
+        self.tabBarItem.selectedImage = UIImage(named: "homeIcon")
     }
     var annotaions:[BusStop] = []
     
@@ -192,7 +199,6 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
                 address += pm!.thoroughfare!
             }
             
-            self.location.text = "현재위치  " + address
             
         })
         manager.stopUpdatingLocation()
