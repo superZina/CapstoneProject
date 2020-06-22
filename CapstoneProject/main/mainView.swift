@@ -135,28 +135,28 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
                 
             }
             
-            //            DispatchQueue.global(qos: .background).async {
-            //                for annotaion in self.mainMap.annotations {
-            //                    for i in self.newSelected {
-            //                        if annotaion.title == i {
-            //                            if self.myAnnotation.coordinate.latitude != 0.0 {
-            //                                var distance = CLLocation(latitude: self.myAnnotation.coordinate.latitude, longitude: self.myAnnotation.coordinate.longitude).distance(from: CLLocation(latitude: annotaion.coordinate.latitude, longitude: annotaion.coordinate.latitude))
-            //                                print(annotaion.title)
-            //                                print(Int(distance))
-            //                                if  distance < 7687795 {
-            //                                    let content = UNMutableNotificationContent()
-            //                                    content.title = "버스 알리미"
-            //                                    content.body = "버스가 곧 도착합니다 "
-            //                                    content.badge = 1
-            //                                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-            //                                    let request = UNNotificationRequest(identifier: "test", content: content, trigger: trigger)
-            //                                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-            //                                }
-            //                            }
-            //                        }
-            //                    }
-            //                }
-            //            }
+                        DispatchQueue.global(qos: .background).async {
+                            for annotaion in self.mainMap.annotations {
+                                for i in self.newSelected {
+                                    if annotaion.title == i {
+                                        if self.myAnnotation.coordinate.latitude != 0.0 {
+                                            var distance = CLLocation(latitude: self.myAnnotation.coordinate.latitude, longitude: self.myAnnotation.coordinate.longitude).distance(from: CLLocation(latitude: annotaion.coordinate.latitude, longitude: annotaion.coordinate.latitude))
+                                            print(annotaion.title)
+                                            print(Int(distance))
+                                            if  distance < 7687795 {
+                                                let content = UNMutableNotificationContent()
+                                                content.title = "버스 알리미"
+                                                content.body = "버스가 곧 도착합니다 "
+                                                content.badge = 1
+                                                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                                                let request = UNNotificationRequest(identifier: "test", content: content, trigger: trigger)
+                                                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
             
         }
     }
