@@ -239,12 +239,10 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
             let time:String = Time["value"] as! String
             PopUp.time.text = time + "분 뒤 도착예정"
         }
-        
         self.present(PopUp, animated: true, completion: nil)
         
         
     }
-    
 //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 //        let reuseId = "BusStop"
 //

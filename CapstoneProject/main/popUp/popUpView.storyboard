@@ -50,17 +50,27 @@
                                             <action selector="exit:" destination="SCG-hA-sDb" eventType="touchUpInside" id="MVb-gd-72J"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dml-Nc-gtl">
+                                        <rect key="frame" x="214" y="193" width="18" height="22"/>
+                                        <state key="normal" image="arrow.clockwise" catalog="system"/>
+                                        <connections>
+                                            <action selector="refreshTime:" destination="SCG-hA-sDb" eventType="touchUpInside" id="JeC-sj-Bd9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cIS-qh-GRr" secondAttribute="trailing" constant="192" id="0gq-A5-hEV"/>
                                     <constraint firstItem="cIS-qh-GRr" firstAttribute="leading" secondItem="dHw-oC-wsk" secondAttribute="leading" constant="192" id="B73-6N-EbK"/>
                                     <constraint firstItem="GpM-qj-RTy" firstAttribute="top" secondItem="7MD-Uz-Gif" secondAttribute="bottom" constant="34" id="EM6-cW-wPV"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="dml-Nc-gtl" secondAttribute="trailing" constant="182" id="FYH-rj-Ths"/>
+                                    <constraint firstItem="dml-Nc-gtl" firstAttribute="leading" secondItem="GpM-qj-RTy" secondAttribute="trailing" constant="8" id="HGj-er-Lt2"/>
+                                    <constraint firstItem="cIS-qh-GRr" firstAttribute="top" secondItem="dml-Nc-gtl" secondAttribute="bottom" constant="122" id="QWM-oh-PEd"/>
                                     <constraint firstItem="sET-rd-j03" firstAttribute="top" secondItem="RVv-jL-Tyh" secondAttribute="bottom" constant="19" id="ReR-N6-UEL"/>
                                     <constraint firstItem="GpM-qj-RTy" firstAttribute="leading" secondItem="dHw-oC-wsk" secondAttribute="leading" constant="50" id="VKt-IS-bvm"/>
+                                    <constraint firstItem="dml-Nc-gtl" firstAttribute="top" secondItem="dHw-oC-wsk" secondAttribute="top" constant="193" id="Wiu-eM-yc9"/>
                                     <constraint firstItem="7MD-Uz-Gif" firstAttribute="top" secondItem="sET-rd-j03" secondAttribute="bottom" constant="20" id="Xuo-u6-Rac"/>
                                     <constraint firstAttribute="trailing" secondItem="sET-rd-j03" secondAttribute="trailing" constant="267" id="YaS-xV-fUQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="GpM-qj-RTy" secondAttribute="trailing" constant="208" id="cAW-62-Seb"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="RVv-jL-Tyh" secondAttribute="trailing" constant="304" id="dRC-Dr-KU9"/>
                                     <constraint firstItem="sET-rd-j03" firstAttribute="leading" secondItem="dHw-oC-wsk" secondAttribute="leading" constant="50" id="hkh-XM-KLB"/>
                                     <constraint firstAttribute="bottom" secondItem="cIS-qh-GRr" secondAttribute="bottom" constant="40" id="jJj-zl-LNZ"/>
@@ -83,6 +93,7 @@
                     <connections>
                         <outlet property="busStopName" destination="RVv-jL-Tyh" id="Nbk-5n-eOz"/>
                         <outlet property="distance" destination="7MD-Uz-Gif" id="rPZ-3C-l3p"/>
+                        <outlet property="refresh" destination="dml-Nc-gtl" id="id4-bL-Mec"/>
                         <outlet property="time" destination="GpM-qj-RTy" id="98c-rg-o6J"/>
                     </connections>
                 </viewController>
@@ -92,6 +103,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

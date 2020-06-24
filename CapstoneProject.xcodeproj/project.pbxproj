@@ -160,9 +160,9 @@
 		FFD3B168246993A100CC5A90 /* CapstoneProject */ = {
 			isa = PBXGroup;
 			children = (
-				FFA975A12493DB820018EC4F /* bookMarkList */,
-				FFD501A3248F6565007D9396 /* busStopList */,
 				FFF8D929246D31E700766074 /* main */,
+				FFD501A3248F6565007D9396 /* busStopList */,
+				FFA975A12493DB820018EC4F /* bookMarkList */,
 				FFF8D927246D31B300766074 /* class */,
 				FFF8D928246D31C900766074 /* userCheck */,
 				FFD3B169246993A100CC5A90 /* AppDelegate.swift */,
