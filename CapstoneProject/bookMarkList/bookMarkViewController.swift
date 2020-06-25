@@ -33,7 +33,9 @@ class bookMarkViewController: UIViewController {
             }
     
     override func viewWillAppear(_ animated: Bool) {        self.bookMarkTable.reloadData()
+        //각 정류장에 셔틀버스 도착 시간을 받아오는 함수
         busStopDataManager().getUser(self)
+        
         selectedIndex = UserDefaults.standard.value(forKey: "selected") as! [Int]
         var newSelected:[String] = []
         var newSelectedLocation:[CLLocation] = []
@@ -53,7 +55,7 @@ class bookMarkViewController: UIViewController {
         self.bookMarkTable.reloadData()
     }
 }
-
+//tableView
 extension bookMarkViewController: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selected.count

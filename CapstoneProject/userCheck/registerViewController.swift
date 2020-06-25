@@ -72,7 +72,7 @@ class registerViewController: UIViewController {
 
     }
     
-//    var manager:CoreDataManager = CoreDataManager()
+    
     func addUser(){
         guard let id = ID.text ,let pw = Password.text ,let phone = PhoneNum.text, let email = Email.text else { return}
         if ID.text == "" || Password.text == "" || PhoneNum.text == "" || Email.text == "" {

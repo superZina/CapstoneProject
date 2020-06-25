@@ -104,10 +104,10 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
             newSelected.append(totalBusStop[i])
         }
         print(myAnnotation.coordinate)
-        //알림 스레드(백그라운드)
+        
+        
+        //셔틀버스 위치 업데이트 , 알림 스레드
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { (timer) in
-            
-            
             DispatchQueue.global(qos: .background).async {
                 Alamofire
                     .request(self.url, method: .post)
@@ -120,43 +120,54 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
                         print(jsonObject)
                         let Lat = jsonObject[0] as! NSDictionary
                         let Long = jsonObject[1] as! NSDictionary
-                        guard let lat:NSNumber = Lat["value"] as! NSNumber else {0.0}
-                        guard let lon:NSNumber = Long["value"] as! NSNumber else {0.0}
+//                        guard let lat:Double = Lat["value"] as! Double else {0.0}
+//                        guard let lon:Double = Long["value"] as! Double else {0.0}
+                        var lat:Double
+                        var lon:Double
+                        if Lat["value"] is NSNull {
+                            lat = 0.0 as Double
+                        }else {
+                            lat = Lat["value"] as! Double
+                        }
+
+                        if Long["value"] is NSNull {
+                            lon = 0.0 as Double
+                        }else {
+                            lon = Long["value"] as! Double
+                        }
                         print(lat," ",lon)
-//                        let doubleLat = Float(lat)
-//                        let doubleLon = Double(lon)
-//                        print(doubleLat ," ",doubleLon)
-                        let destinationPosition = CLLocationCoordinate2D(latitude: CLLocationDegrees( truncating: lat), longitude: CLLocationDegrees( truncating: lon))
+                        //                        let doubleLat = Float(lat)
+                        //                        let doubleLon = Double(lon)
+                        //                        print(doubleLat ," ",doubleLon)
+                        let destinationPosition = CLLocationCoordinate2D(latitude: CLLocationDegrees( truncating: NSNumber(value: lat)), longitude: CLLocationDegrees( truncating: NSNumber(value: lon)))
                         UIView.animate(withDuration: 4, animations: {
                             self.myAnnotation.coordinate = destinationPosition
                         })
-                        
                 }
-                
             }
             
-                        DispatchQueue.global(qos: .background).async {
-                            for annotaion in self.mainMap.annotations {
-                                for i in self.newSelected {
-                                    if annotaion.title == i {
-                                        if self.myAnnotation.coordinate.latitude != 0.0 {
-                                            var distance = CLLocation(latitude: self.myAnnotation.coordinate.latitude, longitude: self.myAnnotation.coordinate.longitude).distance(from: CLLocation(latitude: annotaion.coordinate.latitude, longitude: annotaion.coordinate.latitude))
-                                            print(annotaion.title)
-                                            print(Int(distance))
-                                            if  distance < 7687795 {
-                                                let content = UNMutableNotificationContent()
-                                                content.title = "버스 알리미"
-                                                content.body = "버스가 곧 도착합니다 "
-                                                content.badge = 1
-                                                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-                                                let request = UNNotificationRequest(identifier: "test", content: content, trigger: trigger)
-                                                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-                                            }
-                                        }
-                                    }
+            DispatchQueue.global(qos: .background).async {
+                for annotaion in self.mainMap.annotations {
+                    for i in self.newSelected {
+                        if annotaion.title == i {
+                            if self.myAnnotation.coordinate.latitude != 0.0 {
+                                let distance = CLLocation(latitude: self.myAnnotation.coordinate.latitude, longitude: self.myAnnotation.coordinate.longitude).distance(from: CLLocation(latitude: annotaion.coordinate.latitude, longitude: annotaion.coordinate.latitude))
+                                print(annotaion.title!!)
+                                print(Int(distance))
+                                if  distance < 300 {
+                                    let content = UNMutableNotificationContent()
+                                    content.title = "버스 알리미"
+                                    content.body = "버스가 곧 도착합니다 "
+                                    content.badge = 1
+                                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                                    let request = UNNotificationRequest(identifier: "test", content: content, trigger: trigger)
+                                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                                 }
                             }
                         }
+                    }
+                }
+            }
             
         }
     }
@@ -228,31 +239,40 @@ class mainView: UIViewController ,MKMapViewDelegate, CLLocationManagerDelegate{
         //time을 위한 alamofire 호출
         
         Alamofire
-        .request(self.url, method: .post)
-        .validate()
-        .responseJSON{ (res) in
-            guard let jsonObject = res.result.value as? NSArray else {
-                NSLog("서버 호출 과정에서 에러 발생")
-                return
-            }
-            let Time = jsonObject[2] as! NSDictionary
-            let time:String = Time["value"] as! String
-            PopUp.time.text = time + "분 뒤 도착예정"
+            .request(self.url, method: .post)
+            .validate()
+            .responseJSON{ (res) in
+                guard let jsonObject = res.result.value as? NSArray else {
+                    NSLog("서버 호출 과정에서 에러 발생")
+                    return
+                }
+                let Time = jsonObject[2] as! NSDictionary
+                let time:Double = Time["value"] as! Double// 전체 시간값
+                let min:Int = Int(time) //분
+                let sec:Double = (time -  Double(min)) * 0.6 * 100 //초
+                let message:String
+                if sec < 10.0 && min == 0{
+                    message = "곧 도착"
+                }else{
+                  message = String(min)+" 분"+String(Int(sec))+" 초 뒤 도착 예정"
+                }
+                PopUp.time.text = message
+                
         }
         self.present(PopUp, animated: true, completion: nil)
         
         
     }
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        let reuseId = "BusStop"
-//
-//        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
-//
-////        if annotation.title == "무당이" {
-//            anView!.image = UIImage(named: "무당이")
-////        }
-//
-//
-//        return anView
-//    }
+    //    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    //        let reuseId = "BusStop"
+    //
+    //        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+    //
+    ////        if annotation.title == "무당이" {
+    //            anView!.image = UIImage(named: "무당이")
+    ////        }
+    //
+    //
+    //        return anView
+    //    }
 }

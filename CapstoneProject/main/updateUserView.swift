@@ -43,7 +43,7 @@ class updateUserView: UIViewController, UNUserNotificationCenterDelegate {
         let url = "http://127.0.0.1:3000/api/User/\(self.token)"
         guard let phone:String = phone.text , let email:String = email.text, let pw:String = password.text, let name:String = name.text else {return}
         
-        var parameters:[String:String?] = [
+        let parameters:[String:String?] = [
             "password" : pw,
             "phone" : phone,
             "email" : email,
@@ -78,7 +78,7 @@ class updateUserView: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBAction func deleteUser(_ sender: Any) {
         let url = "http://127.0.0.1:3000/api/User/\(self.token)"
-        let call = Alamofire.request(url, method: .delete)
+        _ = Alamofire.request(url, method: .delete)
         let alert = UIAlertController(title: "delete success", message: "회원탈퇴 완료!", preferredStyle: .alert)
         let ok = UIAlertAction(title: "확인", style: .default) {  UIAlertAction in
             self.navigationController?.popViewController(animated: true)
