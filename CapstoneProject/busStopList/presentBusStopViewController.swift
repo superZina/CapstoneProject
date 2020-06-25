@@ -15,7 +15,7 @@ class presentBusStopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: "http://192.168.0.31:8080/stream")
+        let url = URL(string: "http://192.168.43.219:8080/stream")
         let myRequest = URLRequest(url: url!)
         busWeb.load(myRequest)
     }
